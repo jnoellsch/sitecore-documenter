@@ -17,7 +17,7 @@
             }
 
         .tblcol-name {
-            width: 200px;
+            width: 250px;
         }
     </style>
 </head>
@@ -86,7 +86,9 @@
                 </asp:Repeater>
 
                 <!-- Templates -->
-                <h1>Templates</h1>
+                <div class="page-header">
+                    <h1>Templates</h1>
+                </div>
                 <div>
                     <asp:Repeater runat="server" ID="rptTemplateFolders" ItemType="SitecoreDocumentor.Core.Models.TemplateFolder">
                         <ItemTemplate>
