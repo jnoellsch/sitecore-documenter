@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Packages
+/Src/SitecoreDocumentor.Core/bin
+/Src/SitecoreDocumentor.Core/obj
+/Src/SitecoreDocumentor.Web/bin
+/Src/SitecoreDocumentor.Web/obj
+*.user
+*.suo
