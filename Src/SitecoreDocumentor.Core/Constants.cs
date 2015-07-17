@@ -11,6 +11,7 @@
             public static readonly ID TemplateFolder = new ID("{0437FEE2-44C9-46A6-ABE9-28858D9FEE8C}");
             public static readonly ID SublayoutFolder = new ID("{3BAA73E5-6BA9-4462-BF72-C106F8801B11}");
             public static readonly ID TemplateField = new ID("{455A3E98-A627-4B40-8035-E683A0331AC7}");
+            public static readonly ID StandardTemplate = new ID("{1930bbeb-7805-471a-a3be-4858ac7cf696}");
         }
 
         public class Fields

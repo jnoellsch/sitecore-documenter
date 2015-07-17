@@ -160,9 +160,11 @@
 
         private IList<TemplateMetaItem> FillTemplateBases(Item template)
         {
+            var noiseTemplates = new[] { Constants.Templates.StandardTemplate };
             var baseTemplatesField = (MultilistField)template.Fields[Constants.Fields.BaseTemplate];
             return baseTemplatesField
                 .GetItems()
+                .Where(x => !noiseTemplates.Contains(x.ID))
                 .Select(x => new TemplateMetaItem()
                              {
                                 Id = x.ID.ToGuid(),
