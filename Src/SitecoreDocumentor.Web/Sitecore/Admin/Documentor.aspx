@@ -37,6 +37,10 @@
         .tblcol-type {
             width: 200px;
         }
+
+        .tblrow-indent td:first-child {
+            padding-left: 20px;
+        }
     </style>
 </head>
 <body>
@@ -140,7 +144,7 @@
                                             <tr runat="server" class="active" id="trGroup" Visible="False">
                                                 <td colspan="5" class="text-uppercase"><%# Item.Section.Name %></td>
                                             </tr>
-                                            <tr>
+                                            <tr class="tblrow-indent">
                                                 <td class="tblcol-name"><%# Item.Name %></td>
                                                 <td><%# Item.LongDescription %></td>
                                                 <td class="tblcol-type"><%# Item.FieldType %></td>
