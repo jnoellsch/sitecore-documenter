@@ -4,7 +4,9 @@
     using System.Linq;
     using Sitecore.Data;
     using Sitecore;
+    using Sitecore.Data.Fields;
     using Sitecore.Data.Items;
+    using Sitecore.Data.Templates;
     using Sitecore.Resources.Media;
     using SitecoreDocumentor.Core.Models;
     using Constants = SitecoreDocumentor.Core.Constants;
@@ -141,7 +143,9 @@
                                      Name = x.DisplayName,
                                      Icon = x.Fields[FieldIDs.Icon].GetValue(true, true),
                                      Description = x.Fields[Constants.Fields.LongDescription].Value,
-                                     Fields = this.GetTemplateFields(x.ID)
+                                     Fields = this.GetTemplateFields(x),
+                                     BaseTemplates = this.FillTemplateBases(x),
+                                     InsertOptions = this.FillTemplateInsertOptions(x)
                                  })
                     .ToList();
 
@@ -154,9 +158,42 @@
             return result;
         }
 
-        private IEnumerable<FieldItem> GetTemplateFields(ID templateId)
+        private IList<TemplateMetaItem> FillTemplateBases(Item template)
         {
-            var template = this.Database.GetItem(templateId);
+            var baseTemplatesField = (MultilistField)template.Fields[Constants.Fields.BaseTemplate];
+            return baseTemplatesField
+                .GetItems()
+                .Select(x => new TemplateMetaItem()
+                             {
+                                Id = x.ID.ToGuid(),
+                                Path = x.Paths.GetPath(ItemPathType.Name),
+                                Name = x.DisplayName
+                             })
+                .ToList();
+        }
+
+        private IList<TemplateMetaItem> FillTemplateInsertOptions(Item template)
+        {
+            var standardValuesItem = this.Database.GetItem(template.Fields[FieldIDs.StandardValues].Value);
+            if (standardValuesItem == null)
+            {
+                return Enumerable.Empty<TemplateMetaItem>().ToList();
+            }
+
+            var mastersField = (MultilistField)standardValuesItem.Fields[Constants.Fields.Masters];
+            return mastersField
+                .GetItems()
+                .Select(x => new TemplateMetaItem()
+                             {
+                                 Id = x.ID.ToGuid(),
+                                 Path = x.Paths.GetPath(ItemPathType.Name),
+                                 Name = x.DisplayName
+                             })
+                .ToList();
+        }
+
+        private IList<FieldItem> GetTemplateFields(Item template)
+        {
             var fields = template
                 .Axes
                 .GetDescendants()

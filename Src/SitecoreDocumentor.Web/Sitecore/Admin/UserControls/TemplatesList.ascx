@@ -10,14 +10,37 @@
 
             <asp:Repeater ID="rptTemplates" runat="server" ItemType="SitecoreDocumentor.Core.Models.TemplateMetaItem">
                 <ItemTemplate>
-                    <h3>
+                    <h3 id="<%# Item.Id %>">
                         <img src="<%# "/sitecore/shell/~/icon/" + Item.Icon %>" />
                         <%# Item.Name %>
                     </h3>
                     <p><%# Item.Description %></p>
 
+                    <asp:Repeater runat="server" ID="rptBaseTemplates" ItemType="SitecoreDocumentor.Core.Models.TemplateMetaItem">
+                        <HeaderTemplate>
+                            <p>Inherited from: </p>
+                            <ul class="inline-list">
+                        </HeaderTemplate>
+                        <ItemTemplate>
+                            <li><a href="#<%# Item.Id %>"><%# Item.Name %></a></li>
+                        </ItemTemplate>
+                        <FooterTemplate></ul></FooterTemplate>
+                    </asp:Repeater>
+
+                    <asp:Repeater runat="server" id="rptInsertOptions" ItemType="SitecoreDocumentor.Core.Models.TemplateMetaItem">
+                        <HeaderTemplate>
+                            <p>Allowed children: </p>
+                            <ul class="inline-list">
+                        </HeaderTemplate>
+                        <ItemTemplate>
+                            <li><a href="#<%# Item.Id %>"><%# Item.Name %></a></li>
+                        </ItemTemplate>
+                        <FooterTemplate></ul></FooterTemplate>
+                    </asp:Repeater>
+                    
                     <asp:Repeater runat="server" ID="rptFields" ItemType="SitecoreDocumentor.Core.Models.FieldItem">
                         <HeaderTemplate>
+                            <p>Fields:</p>
                             <table class="table table-bordered table-condensed">
                                 <thead>
                                     <tr>
@@ -44,7 +67,7 @@
                         </ItemTemplate>
                         <FooterTemplate>
                             </tbody>
-                                            </table>            
+                            </table>            
                         </FooterTemplate>
                     </asp:Repeater>
                 </ItemTemplate>

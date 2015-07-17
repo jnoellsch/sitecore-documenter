@@ -22,6 +22,8 @@
             public static readonly string LongDescription = "__Long Description";
             public static readonly string ShortDescription = "__Short Description";
             public static readonly string ValidatorBar = "Validator Bar";
+            public static readonly string Masters = "__Masters";
+            public static readonly string BaseTemplate = "__Base Template";
         }
 
         public class Validators

@@ -5,7 +5,7 @@
 </div>
 <asp:Repeater runat="server" ID="rptRenderingFolders" ItemType="SitecoreDocumentor.Core.Models.RenderingFolder">
     <ItemTemplate>
-        <h2><%# Item.Name %></h2>
+        <h2 id="<%# Item.Id %>"><%# Item.Name %></h2>
 
         <asp:Repeater runat="server" ID="rptRenderings" ItemType="SitecoreDocumentor.Core.Models.RenderingMetaItem">
             <HeaderTemplate>
