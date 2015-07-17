@@ -1,11 +1,11 @@
 ﻿namespace SitecoreDocumentor.Core.Models
 {
     using System;
-    using Sitecore.Data.Items;
 
     [Serializable]
-    public class RenderingBase
+    public class ModelBase
     {
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public string Path { get; set; }
     }

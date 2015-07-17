@@ -45,10 +45,11 @@
   <ItemGroup>
     <Compile Include="Constants.cs" />
     <Compile Include="Models\FieldItem.cs" />
-    <Compile Include="Models\RenderingBase.cs" />
+    <Compile Include="Models\ModelBase.cs" />
     <Compile Include="Models\RenderingFolder.cs" />
     <Compile Include="Models\RenderingMetaItem.cs" />
-    <Compile Include="Models\TemplateItem.cs" />
+    <Compile Include="Models\SectionItem.cs" />
+    <Compile Include="Models\TemplateMetaItem.cs" />
     <Compile Include="Models\TemplateFolder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

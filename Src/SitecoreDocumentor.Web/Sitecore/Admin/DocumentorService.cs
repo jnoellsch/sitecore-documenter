@@ -1,5 +1,6 @@
 ﻿namespace SitecoreDocumentor.Web
 {
+    using System.Collections.Generic;
     using System.Linq;
     using Sitecore.Data;
     using Sitecore;
@@ -10,15 +11,26 @@
 
     public class DocumentorService
     {
-        public DocumentorService()
-        {
-        }
+        private readonly ID[] _fldrTemplates = {
+                                                    Constants.Templates.RenderingFolder, 
+                                                    Constants.Templates.TemplateFolder,
+                                                    Constants.Templates.SublayoutFolder,
+                                                    Constants.Templates.Folder
+                                                };
 
         private Database Database
         {
             get
             {
                 return Sitecore.Configuration.Factory.GetDatabase("master");
+            }
+        }
+
+        public ID[] FolderTemplates
+        {
+            get
+            {
+                return this._fldrTemplates;
             }
         }
 
@@ -29,18 +41,17 @@
             return rendering;
         }
 
+        public TemplateFolder GetTemplates(string rootPath)
+        {
+            var result = new TemplateFolder();
+            this.GetTemplatesDeep(rootPath, result);
+            return result;
+        }
+
         private RenderingFolder GetRenderingsDeep(string rootPath, RenderingFolder result)
         {
             // get root item - go deeper if are sub items
             // otherwise, assume empty folder or bad path
-            var fldrTemplates = new[]
-                                {
-                                    Constants.Templates.RenderingFolder, 
-                                    Constants.Templates.TemplateFolder,
-                                    Constants.Templates.SublayoutFolder,
-                                    Constants.Templates.Folder
-                                };
-
             Item root = this.Database.GetItem(rootPath);
             result.Name = root.DisplayName;
 
@@ -50,9 +61,10 @@
                 var fldrs = root
                     .Axes
                     .GetDescendants()
-                    .Where(x => fldrTemplates.Contains(x.TemplateID))
+                    .Where(x => this.FolderTemplates.Contains(x.TemplateID))
                     .Select(x => new RenderingFolder()
                                  {
+                                     Id = x.ID.ToGuid(),
                                      Path = x.Paths.GetPath(ItemPathType.Name), 
                                      Name = x.DisplayName
                                  })
@@ -63,22 +75,17 @@
                 {
                     result.Folders.Add(this.GetRenderingsDeep(f.Path, f));
                 }
-
                 
                 // grab renderings, add only
-                var renderingsItems = root
+                var renderings = root
                     .Children
-                    .Where(x => !fldrTemplates.Contains(x.TemplateID))
-                    .ToList();
-
-                renderingsItems.ForEach(x => x.Fields.ReadAll());
-
-                var renderings = renderingsItems
+                    .Where(x => !this.FolderTemplates.Contains(x.TemplateID))
                     .Select(x => new RenderingMetaItem()
                                  {
+                                     Id = x.ID.ToGuid(),
                                      Path = x.Paths.GetPath(ItemPathType.Name),
                                      Name = x.DisplayName,
-                                     Icon = x.Fields[FieldIDs.Icon].HasValue ? x.Fields[FieldIDs.Icon].Value : "Software/16x16/element.png",
+                                     Icon = x.Fields[FieldIDs.Icon].GetValue(true, true),
                                      ThumbnailImage = MediaManager.GetMediaUrl(x.Fields[FieldIDs.Thumbnail].Item),
                                      Description = x.Fields[Constants.Fields.Description].Value,
                                      DataSourceLocation = x.Fields[Constants.Fields.DataSourceLocation].Value,
@@ -95,9 +102,85 @@
             return result;
         }
 
-        public TemplateFolder GetTemplates(string rootPath)
+        private TemplateFolder GetTemplatesDeep(string rootPath, TemplateFolder result)
         {
-            return new TemplateFolder();
+            // get root item - go deeper if are sub items
+            // otherwise, assume empty folder or bad path
+            Item root = this.Database.GetItem(rootPath);
+            result.Name = root.DisplayName;
+
+            if (root.HasChildren)
+            {
+                // grab folders, add, traverse deeper
+                var fldrs = root
+                    .Axes
+                    .GetDescendants()
+                    .Where(x => this.FolderTemplates.Contains(x.TemplateID))
+                    .Select(x => new TemplateFolder()
+                                 {
+                                     Id = x.ID.ToGuid(),
+                                     Path = x.Paths.GetPath(ItemPathType.Name), 
+                                     Name = x.DisplayName
+                                 })
+                    .ToList();
+                ;
+
+                foreach (var f in fldrs)
+                {
+                    result.Folders.Add(this.GetTemplatesDeep(f.Path, f));
+                }
+
+                // grab templates, add only
+                var templates = root
+                    .Children
+                    .Where(x => !this.FolderTemplates.Contains(x.TemplateID))
+                    .Select(x => new TemplateMetaItem()
+                                 {
+                                     Id = x.ID.ToGuid(),
+                                     Path = x.Paths.GetPath(ItemPathType.Name),
+                                     Name = x.DisplayName,
+                                     Icon = x.Fields[FieldIDs.Icon].GetValue(true, true),
+                                     Description = x.Fields[Constants.Fields.LongDescription].Value,
+                                     Fields = this.GetTemplateFields(x.ID)
+                                 })
+                    .ToList();
+
+                foreach (var r in templates)
+                {
+                    result.Templates.Add(r);
+                }
+            }
+
+            return result;
+        }
+
+        private IEnumerable<FieldItem> GetTemplateFields(ID templateId)
+        {
+            var template = this.Database.GetItem(templateId);
+            var fields = template
+                .Axes
+                .GetDescendants()
+                .Where(x => x.TemplateID == Constants.Templates.TemplateField)
+                .Select(x => new FieldItem()
+                             {
+                                 Id = x.ID.ToGuid(),
+                                 Path = x.Paths.GetPath(ItemPathType.Name),
+                                 Name = x.DisplayName,
+                                 Section = new SectionItem()
+                                           {
+                                             Id  = x.Parent.ID.ToGuid(),
+                                             Name = x.Parent.DisplayName,
+                                             Path = x.Parent.Paths.GetPath(ItemPathType.Name)
+                                           },
+                                 FieldType = x.Fields[Constants.Fields.Type].Value,
+                                 Source = x.Fields[FieldIDs.Source].Value,
+                                 LongDescription = x.Fields[Constants.Fields.LongDescription].Value,
+                                 ShortDescription = x.Fields[Constants.Fields.ShortDescription].Value,
+                                 IsRequired = x.Fields[Constants.Fields.ValidatorBar].Value.Contains(Constants.Validators.IsRequired.ToString())
+                             })
+                .ToList();
+
+            return fields;
         }
     }
 }

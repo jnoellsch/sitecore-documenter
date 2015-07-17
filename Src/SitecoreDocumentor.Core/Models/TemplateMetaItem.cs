@@ -4,13 +4,12 @@
     using System.Collections.Generic;
 
     [Serializable]
-    public class TemplateItem
+    public class TemplateMetaItem : ModelBase
     {
-        public string Name { get; set; }
         public string Description { get; set; }
         public string Icon { get; set; }
         public IEnumerable<FieldItem> Fields { get; set; }
-        public IEnumerable<TemplateItem> InsertOptions { get; set; }
-        public IEnumerable<TemplateItem> BaseTemplates { get; set; }
+        public IEnumerable<TemplateMetaItem> InsertOptions { get; set; }
+        public IEnumerable<TemplateMetaItem> BaseTemplates { get; set; }
     }
 }

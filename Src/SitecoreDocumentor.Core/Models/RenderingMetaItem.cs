@@ -4,7 +4,7 @@ namespace SitecoreDocumentor.Core.Models
     using Sitecore.Data.Items;
 
     [Serializable]
-    public class RenderingMetaItem : RenderingBase
+    public class RenderingMetaItem : ModelBase
     {
         public string Description { get; set; }
         public string Icon { get; set; }

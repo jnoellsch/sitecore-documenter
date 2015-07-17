@@ -4,10 +4,15 @@
     using System.Collections.Generic;
 
     [Serializable]
-    public class TemplateFolder
+    public class TemplateFolder : ModelBase
     {
-        public string Name { get; set; }
+        public TemplateFolder()
+        {
+            this.Folders = new List<TemplateFolder>();
+            this.Templates = new List<TemplateMetaItem>();
+        }
+
         public IList<TemplateFolder> Folders { get; set; }
-        public IList<TemplateItem> Templates { get; set; }
+        public IList<TemplateMetaItem> Templates { get; set; }
     }
 }

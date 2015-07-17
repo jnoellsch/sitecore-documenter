@@ -3,12 +3,11 @@
     using System;
 
     [Serializable]
-    public class FieldItem
+    public class FieldItem : ModelBase
     {
-        public string Name { get; set; }
-        public string SectionName { get; set; }
+        public SectionItem Section { get; set; }
         public string FieldType { get; set; }
-        public string DataSource { get; set; }
+        public string Source { get; set; }
         public string ShortDescription { get; set; }
         public string LongDescription { get; set; }
         public bool IsRequired { get; set; }

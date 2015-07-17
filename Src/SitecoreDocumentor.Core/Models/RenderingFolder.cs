@@ -5,7 +5,7 @@
     using Sitecore.Data.Items;
 
     [Serializable]
-    public class RenderingFolder : RenderingBase
+    public class RenderingFolder : ModelBase
     {
         public RenderingFolder()
         {
