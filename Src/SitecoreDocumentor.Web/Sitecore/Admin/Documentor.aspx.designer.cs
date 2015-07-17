@@ -49,21 +49,21 @@ namespace SitecoreDocumentor.Web {
         protected global::System.Web.UI.WebControls.Button btnSubmit;
         
         /// <summary>
-        /// rptRenderingFolders control.
+        /// ucRenderings control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptRenderingFolders;
+        protected global::SitecoreDocumentor.Web.UserControls.RenderingsList ucRenderings;
         
         /// <summary>
-        /// rptTemplateFolders control.
+        /// ucTemplates control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptTemplateFolders;
+        protected global::SitecoreDocumentor.Web.UserControls.TemplatesList ucTemplates;
     }
 }

@@ -51,7 +51,9 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -65,11 +67,27 @@
     <Compile Include="Sitecore\Admin\DocumentorPresenter.cs" />
     <Compile Include="Sitecore\Admin\DocumentorService.cs" />
     <Compile Include="Sitecore\Admin\IDocumentorView.cs" />
+    <Compile Include="Sitecore\Admin\UserControls\RenderingsList.ascx.cs">
+      <DependentUpon>RenderingsList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sitecore\Admin\UserControls\RenderingsList.ascx.designer.cs">
+      <DependentUpon>RenderingsList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Sitecore\Admin\UserControls\TemplatesList.ascx.cs">
+      <DependentUpon>TemplatesList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sitecore\Admin\UserControls\TemplatesList.ascx.designer.cs">
+      <DependentUpon>TemplatesList.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <Content Include="Sitecore\Admin\Documentor.aspx" />
     <Content Include="packages.config" />
+    <Content Include="Sitecore\Admin\UserControls\RenderingsList.ascx" />
+    <Content Include="Sitecore\Admin\UserControls\TemplatesList.ascx" />
     <None Include="Properties\PublishProfiles\Noellsch.pubxml" />
   </ItemGroup>
   <ItemGroup>
