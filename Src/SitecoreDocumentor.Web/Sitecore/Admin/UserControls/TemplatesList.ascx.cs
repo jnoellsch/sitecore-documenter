@@ -18,6 +18,7 @@
             set
             {
                 this.rptTemplateFolders.DataSource = value;
+                this.rptJumplinks.DataSource = value;
             }
         }
 

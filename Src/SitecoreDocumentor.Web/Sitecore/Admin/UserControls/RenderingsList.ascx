@@ -3,6 +3,11 @@
 <div class="page-header">
     <h1>Renderings</h1>
 </div>
+<asp:Repeater runat="server" ID="rptJumplinks" ItemType="SitecoreDocumentor.Core.Models.RenderingFolder">
+    <HeaderTemplate><ul></HeaderTemplate>
+    <ItemTemplate><li><a href="#<%# Item.Id %>"><%# Item.Name %></a></li></ItemTemplate>
+    <FooterTemplate></ul></FooterTemplate>
+</asp:Repeater>
 <asp:Repeater runat="server" ID="rptRenderingFolders" ItemType="SitecoreDocumentor.Core.Models.RenderingFolder">
     <ItemTemplate>
         <h2 id="<%# Item.Id %>"><%# Item.Name %></h2>

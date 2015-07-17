@@ -13,6 +13,15 @@ namespace SitecoreDocumentor.Web.UserControls {
     public partial class RenderingsList {
         
         /// <summary>
+        /// rptJumplinks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptJumplinks;
+        
+        /// <summary>
         /// rptRenderingFolders control.
         /// </summary>
         /// <remarks>

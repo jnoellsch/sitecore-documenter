@@ -8,13 +8,6 @@
 
     public partial class RenderingsList : UserControl
     {
-        protected override void OnLoad(EventArgs e)
-        {
-            base.OnLoad(e);
-
-            this.rptRenderingFolders.ItemDataBound += this.RenderingsFolderRepeaterOnItemDataBound;
-        }
-
         public object DataSource
         {
             get
@@ -25,7 +18,15 @@
             set
             {
                 this.rptRenderingFolders.DataSource = value;
+                this.rptJumplinks.DataSource = value;
             }
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            this.rptRenderingFolders.ItemDataBound += this.RenderingsFolderRepeaterOnItemDataBound;
         }
 
         private void RenderingsFolderRepeaterOnItemDataBound(object sender, RepeaterItemEventArgs args)

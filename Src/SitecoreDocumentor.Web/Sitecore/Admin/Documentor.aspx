@@ -44,7 +44,7 @@
         }
 
         .tblcol-type {
-            width: 1750px;
+            width: 175px;
         }
 
         .tblrow-indent td:first-child {
