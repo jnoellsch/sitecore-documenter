@@ -4,9 +4,9 @@
     <h1>Templates</h1>
 </div>
 <asp:Repeater runat="server" ID="rptJumplinks" ItemType="SitecoreDocumentor.Core.Models.TemplateFolder">
-    <HeaderTemplate><ul></HeaderTemplate>
-    <ItemTemplate><li><a href="#<%# Item.Id %>"><%# Item.Name %></a></li></ItemTemplate>
-    <FooterTemplate></ul></FooterTemplate>
+    <HeaderTemplate><div class="list-group"></HeaderTemplate>
+    <ItemTemplate><a href="#<%# Item.Id %>" class="list-group-item"><%# Item.Name %></a></ItemTemplate>
+    <FooterTemplate></div></FooterTemplate>
 </asp:Repeater>
 <asp:Repeater runat="server" ID="rptTemplateFolders" ItemType="SitecoreDocumentor.Core.Models.TemplateFolder">
     <ItemTemplate>

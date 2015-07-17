@@ -4,9 +4,9 @@
     <h1>Renderings</h1>
 </div>
 <asp:Repeater runat="server" ID="rptJumplinks" ItemType="SitecoreDocumentor.Core.Models.RenderingFolder">
-    <HeaderTemplate><ul></HeaderTemplate>
-    <ItemTemplate><li><a href="#<%# Item.Id %>"><%# Item.Name %></a></li></ItemTemplate>
-    <FooterTemplate></ul></FooterTemplate>
+    <HeaderTemplate><div class="list-group"></HeaderTemplate>
+    <ItemTemplate><a href="#<%# Item.Id %>" class="list-group-item"><%# Item.Name %></a></ItemTemplate>
+    <FooterTemplate></div></FooterTemplate>
 </asp:Repeater>
 <asp:Repeater runat="server" ID="rptRenderingFolders" ItemType="SitecoreDocumentor.Core.Models.RenderingFolder">
     <ItemTemplate>
