@@ -18,6 +18,10 @@
             width: 16px;
         }
 
+        .caption {
+            color: #777;
+        }
+
         .tblcol-icon {
             width: 30px;
         }

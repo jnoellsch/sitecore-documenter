@@ -18,7 +18,7 @@
 
                     <asp:Repeater runat="server" ID="rptBaseTemplates" ItemType="SitecoreDocumentor.Core.Models.TemplateMetaItem">
                         <HeaderTemplate>
-                            <p>Inherited from: </p>
+                            <p class="caption">Inherited from: </p>
                             <ul class="inline-list">
                         </HeaderTemplate>
                         <ItemTemplate>
@@ -29,7 +29,7 @@
 
                     <asp:Repeater runat="server" id="rptInsertOptions" ItemType="SitecoreDocumentor.Core.Models.TemplateMetaItem">
                         <HeaderTemplate>
-                            <p>Allowed children: </p>
+                            <p class="caption">Allowed children: </p>
                             <ul class="inline-list">
                         </HeaderTemplate>
                         <ItemTemplate>
@@ -40,8 +40,8 @@
                     
                     <asp:Repeater runat="server" ID="rptFields" ItemType="SitecoreDocumentor.Core.Models.FieldItem">
                         <HeaderTemplate>
-                            <p>Fields:</p>
                             <table class="table table-bordered table-condensed">
+                                <caption>Fields:</caption>
                                 <thead>
                                     <tr>
                                         <th class="tblcol-name">Name</th>
@@ -55,7 +55,7 @@
                         </HeaderTemplate>
                         <ItemTemplate>
                             <tr runat="server" class="active" id="trGroup" visible="False">
-                                <td colspan="5" class="text-uppercase"><%# Item.Section.Name %></td>
+                                <td colspan="5"><%# Item.Section.Name %></td>
                             </tr>
                             <tr class="tblrow-indent">
                                 <td class="tblcol-name"><%# Item.Name %></td>
