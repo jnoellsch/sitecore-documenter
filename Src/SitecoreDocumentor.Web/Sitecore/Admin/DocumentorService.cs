@@ -212,7 +212,7 @@
                                              Path = x.Parent.Paths.GetPath(ItemPathType.Name)
                                            },
                                  FieldType = x.Fields[Constants.Fields.Type].Value,
-                                 Source = x.Fields[FieldIDs.Source].Value,
+                                 Source = x.Fields[Constants.Fields.Source].Value,
                                  LongDescription = x.Fields[Constants.Fields.LongDescription].Value,
                                  ShortDescription = x.Fields[Constants.Fields.ShortDescription].Value,
                                  IsRequired = x.Fields[Constants.Fields.ValidatorBar].Value.Contains(Constants.Validators.IsRequired.ToString())

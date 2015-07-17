@@ -25,6 +25,7 @@
             public static readonly string ValidatorBar = "Validator Bar";
             public static readonly string Masters = "__Masters";
             public static readonly string BaseTemplate = "__Base Template";
+            public static readonly string Source = "Source";
         }
 
         public class Validators

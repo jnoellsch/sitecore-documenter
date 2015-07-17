@@ -18,8 +18,8 @@
 
                     <asp:Repeater runat="server" ID="rptBaseTemplates" ItemType="SitecoreDocumentor.Core.Models.TemplateMetaItem">
                         <HeaderTemplate>
-                            <p class="caption">Inherited from: </p>
-                            <ul class="inline-list">
+                            <p class="muted">Inherited from: </p>
+                            <ul>
                         </HeaderTemplate>
                         <ItemTemplate>
                             <li><a href="#<%# Item.Id %>"><%# Item.Name %></a></li>
@@ -29,8 +29,8 @@
 
                     <asp:Repeater runat="server" id="rptInsertOptions" ItemType="SitecoreDocumentor.Core.Models.TemplateMetaItem">
                         <HeaderTemplate>
-                            <p class="caption">Allowed children: </p>
-                            <ul class="inline-list">
+                            <p class="muted">Allowed children: </p>
+                            <ul>
                         </HeaderTemplate>
                         <ItemTemplate>
                             <li><a href="#<%# Item.Id %>"><%# Item.Name %></a></li>
@@ -61,7 +61,7 @@
                                 <td class="tblcol-name"><%# Item.Name %></td>
                                 <td><%# Item.LongDescription %></td>
                                 <td class="tblcol-type"><%# Item.FieldType %></td>
-                                <td class="tblcol-src"><%# Item.Source %></td>
+                                <td class="tblcol-src"><small class="muted"><%# Item.Source %></small></td>
                                 <td class="tblcol-req"><%# Item.IsRequired ? "X" : string.Empty %></td>
                             </tr>
                         </ItemTemplate>

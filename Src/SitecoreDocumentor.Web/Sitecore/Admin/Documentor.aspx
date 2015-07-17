@@ -18,7 +18,7 @@
             width: 16px;
         }
 
-        .caption {
+        .muted {
             color: #777;
         }
 
@@ -31,11 +31,11 @@
             }
 
         .tblcol-name {
-            width: 250px;
+            width: 225px;
         }
 
         .tblcol-req {
-            width: 20px;
+            width: 90px;
             text-align: center;
         }
 
@@ -44,7 +44,7 @@
         }
 
         .tblcol-type {
-            width: 200px;
+            width: 1750px;
         }
 
         .tblrow-indent td:first-child {
