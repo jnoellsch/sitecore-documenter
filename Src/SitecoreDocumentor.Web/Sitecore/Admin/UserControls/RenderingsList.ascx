@@ -9,7 +9,7 @@
 
         <asp:Repeater runat="server" ID="rptRenderings" ItemType="SitecoreDocumentor.Core.Models.RenderingMetaItem">
             <HeaderTemplate>
-                <table class="table">
+                <table class="table table-bordered table-condensed">
                     <thead>
                         <tr>
                             <th class="tblcol-icon"></th>

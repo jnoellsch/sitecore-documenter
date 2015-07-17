@@ -1,16 +1,12 @@
 ﻿namespace SitecoreDocumentor.Web
 {
     using System;
-    using System.Linq;
     using System.Web.UI;
-    using System.Web.UI.WebControls;
     using SitecoreDocumentor.Core.Models;
 
     public partial class Documentor : Page, IDocumentorView
     {
         private DocumentorPresenter _presenter;
-
-
 
         protected override void OnLoad(EventArgs e)
         {

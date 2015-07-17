@@ -6,9 +6,7 @@
 <div>
     <asp:Repeater runat="server" ID="rptTemplateFolders" ItemType="SitecoreDocumentor.Core.Models.TemplateFolder">
         <ItemTemplate>
-            <div class="page-header">
-                <h2><%# Item.Name %></h2>
-            </div>
+            <h2><%# Item.Name %></h2>
 
             <asp:Repeater ID="rptTemplates" runat="server" ItemType="SitecoreDocumentor.Core.Models.TemplateMetaItem">
                 <ItemTemplate>
@@ -20,7 +18,7 @@
 
                     <asp:Repeater runat="server" ID="rptFields" ItemType="SitecoreDocumentor.Core.Models.FieldItem">
                         <HeaderTemplate>
-                            <table class="table">
+                            <table class="table table-bordered table-condensed">
                                 <thead>
                                     <tr>
                                         <th class="tblcol-name">Name</th>

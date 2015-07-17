@@ -9,6 +9,8 @@
 <head runat="server">
     <title>Sitecore Documentor</title>
     <link rel="stylesheet" href="//ajax.aspnetcdn.com/ajax/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
+    <script src="//ajax.aspnetcdn.com/ajax/bootstrap/3.3.4/bootstrap.min.js"></script>
 
     <style type="text/css">
         h3 img {
@@ -50,7 +52,7 @@
     <form id="form1" runat="server" class="container-fluid">
         <!-- Form -->
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="form form-vertical">
                     <div class="form-group">
                         <label class="control-label">Rendering Root</label>
@@ -69,10 +71,31 @@
 
         <div class="row">
             <div class="col-md-12">
-                <uc:RenderingsList ID="ucRenderings" runat="server" />
-                <uc:TemplatesList ID="ucTemplates" runat="server" />
+                <ul class="nav nav-tabs" data-tabs="tabs" id="tabs" role="tablist">
+                    <li class="active"><a href="#renderings" data-toggle="tab" role="tab">Renderings</a></li>
+                    <li><a href="#templates" data-toggle="tab" role="tab">Templates</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="renderings">
+                        <uc:RenderingsList ID="ucRenderings" runat="server" />
+                    </div>
+                    <div class="tab-pane" id="templates">
+                        <uc:TemplatesList ID="ucTemplates" runat="server" />
+                    </div>
+                </div>
             </div>
         </div>
+
+        <script type="text/javascript">
+            $(function() {
+                $("#tabs a").click(function(e) {
+                    e.preventDefault();
+                    $(this).tab("show");
+                });
+
+                $("#tab a:first-child").tab("show");
+            });
+        </script>
     </form>
 </body>
 </html>
