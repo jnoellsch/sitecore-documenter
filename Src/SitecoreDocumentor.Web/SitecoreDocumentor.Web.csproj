@@ -107,7 +107,8 @@
     <Content Include="Sitecore\Admin\UserControls\RenderingsList.ascx" />
     <Content Include="Sitecore\Admin\UserControls\TemplatesList.ascx" />
     <Content Include="app.config" />
-    <None Include="Properties\PublishProfiles\Noellsch.pubxml" />
+    <None Include="Properties\PublishProfiles\Sitecore 7.pubxml" />
+    <None Include="Properties\PublishProfiles\Sitecore 8.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
