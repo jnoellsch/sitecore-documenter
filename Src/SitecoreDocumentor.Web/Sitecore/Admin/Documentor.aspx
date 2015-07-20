@@ -18,6 +18,11 @@
             width: 16px;
         }
 
+        .row {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
         .muted {
             color: #777;
         }
@@ -56,8 +61,8 @@
     <form id="form1" runat="server" class="container-fluid">
         <!-- Form -->
         <div class="row">
-            <div class="col-md-4">
-                <div class="form form-vertical">
+            <div class="col-md-12">
+                <div class="form form-inline">
                     <div class="form-group">
                         <label class="control-label">Rendering Root</label>
                         <asp:TextBox runat="server" ID="txtRenderingRoot" CssClass="form-control" Placeholder="Rendering path" Text="/sitecore/layout/Renderings/Rolanddga_com" />
@@ -66,9 +71,7 @@
                         <label class="control-label">Template Root</label>
                         <asp:TextBox runat="server" ID="txtTemplateRoot" CssClass="form-control" Placeholder="Template path" Text="/sitecore/templates/Rolanddga_com" />
                     </div>
-                    <div class="form-group">
-                        <asp:Button runat="server" ID="btnSubmit" CssClass="btn btn-primary" Text="Run" />
-                    </div>
+                    <asp:Button runat="server" ID="btnSubmit" CssClass="btn btn-primary" Text="Run" />
                 </div>
             </div>
         </div>

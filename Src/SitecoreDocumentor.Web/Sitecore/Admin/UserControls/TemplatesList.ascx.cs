@@ -4,7 +4,7 @@
     using System.Linq;
     using System.Web.UI;
     using System.Web.UI.WebControls;
-    using SitecoreDocumentor.Core.Models;
+    using SitecoreDocumentor.Web.Models;
 
     public partial class TemplatesList : UserControl
     {

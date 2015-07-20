@@ -1,15 +1,14 @@
-﻿namespace SitecoreDocumentor.Web
+﻿namespace SitecoreDocumentor.Web.Services
 {
     using System.Collections.Generic;
     using System.Linq;
-    using Sitecore.Data;
     using Sitecore;
+    using Sitecore.Data;
     using Sitecore.Data.Fields;
     using Sitecore.Data.Items;
-    using Sitecore.Data.Templates;
     using Sitecore.Resources.Media;
-    using SitecoreDocumentor.Core.Models;
-    using Constants = SitecoreDocumentor.Core.Constants;
+    using SitecoreDocumentor.Web.Models;
+    using Constants = SitecoreDocumentor.Web.Constants;
 
     public class DocumentorService
     {

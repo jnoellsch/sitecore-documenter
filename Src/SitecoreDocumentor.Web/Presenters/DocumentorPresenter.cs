@@ -1,6 +1,8 @@
-﻿namespace SitecoreDocumentor.Web
+﻿namespace SitecoreDocumentor.Web.Presenters
 {
     using System;
+    using SitecoreDocumentor.Web.Services;
+    using SitecoreDocumentor.Web.Views;
 
     public class DocumentorPresenter
     {

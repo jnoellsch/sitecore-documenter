@@ -1,8 +1,7 @@
-﻿namespace SitecoreDocumentor.Core.Models
+﻿namespace SitecoreDocumentor.Web.Models
 {
     using System;
     using System.Collections.Generic;
-    using Sitecore.Data.Items;
 
     [Serializable]
     public class RenderingFolder : ModelBase

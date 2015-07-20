@@ -5,7 +5,7 @@
 </div>
 <div class="row">
     <div class="col-md-2">
-        <asp:Repeater runat="server" ID="rptJumplinks" ItemType="SitecoreDocumentor.Core.Models.RenderingFolder">
+        <asp:Repeater runat="server" ID="rptJumplinks" ItemType="SitecoreDocumentor.Web.Models.RenderingFolder">
             <HeaderTemplate>
                 <div class="list-group">
             </HeaderTemplate>
@@ -16,11 +16,11 @@
         </asp:Repeater>
     </div>
     <div class="col-md-10">
-        <asp:Repeater runat="server" ID="rptRenderingFolders" ItemType="SitecoreDocumentor.Core.Models.RenderingFolder">
+        <asp:Repeater runat="server" ID="rptRenderingFolders" ItemType="SitecoreDocumentor.Web.Models.RenderingFolder">
             <ItemTemplate>
                 <h2 id="<%# Item.Id %>"><%# Item.Name %></h2>
 
-                <asp:Repeater runat="server" ID="rptRenderings" ItemType="SitecoreDocumentor.Core.Models.RenderingMetaItem">
+                <asp:Repeater runat="server" ID="rptRenderings" ItemType="SitecoreDocumentor.Web.Models.RenderingMetaItem">
                     <HeaderTemplate>
                         <table class="table table-bordered table-condensed">
                             <thead>

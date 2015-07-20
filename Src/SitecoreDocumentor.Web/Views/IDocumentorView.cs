@@ -1,7 +1,6 @@
-﻿namespace SitecoreDocumentor.Web
+﻿namespace SitecoreDocumentor.Web.Views
 {
-    using System.Collections.Generic;
-    using SitecoreDocumentor.Core.Models;
+    using SitecoreDocumentor.Web.Models;
 
     public interface IDocumentorView
     {

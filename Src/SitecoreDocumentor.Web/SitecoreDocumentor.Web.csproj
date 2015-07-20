@@ -56,6 +56,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
+    <Compile Include="Models\FieldItem.cs" />
+    <Compile Include="Models\ModelBase.cs" />
+    <Compile Include="Models\RenderingFolder.cs" />
+    <Compile Include="Models\RenderingMetaItem.cs" />
+    <Compile Include="Models\SectionItem.cs" />
+    <Compile Include="Models\TemplateFolder.cs" />
+    <Compile Include="Models\TemplateMetaItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sitecore\Admin\Documentor.aspx.cs">
       <DependentUpon>Documentor.aspx</DependentUpon>
@@ -64,9 +72,9 @@
     <Compile Include="Sitecore\Admin\Documentor.aspx.designer.cs">
       <DependentUpon>Documentor.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Sitecore\Admin\DocumentorPresenter.cs" />
-    <Compile Include="Sitecore\Admin\DocumentorService.cs" />
-    <Compile Include="Sitecore\Admin\IDocumentorView.cs" />
+    <Compile Include="Presenters\DocumentorPresenter.cs" />
+    <Compile Include="Services\DocumentorService.cs" />
+    <Compile Include="Views\IDocumentorView.cs" />
     <Compile Include="Sitecore\Admin\UserControls\RenderingsList.ascx.cs">
       <DependentUpon>RenderingsList.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -89,12 +97,6 @@
     <Content Include="Sitecore\Admin\UserControls\RenderingsList.ascx" />
     <Content Include="Sitecore\Admin\UserControls\TemplatesList.ascx" />
     <None Include="Properties\PublishProfiles\Noellsch.pubxml" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SitecoreDocumentor.Core\SitecoreDocumentor.Core.csproj">
-      <Project>{B290A412-83DB-46AE-BDCC-1F64D8C265D4}</Project>
-      <Name>SitecoreDocumentor.Core</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

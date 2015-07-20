@@ -1,4 +1,4 @@
-﻿namespace SitecoreDocumentor.Core
+﻿namespace SitecoreDocumentor.Web
 {
     using Sitecore.Data;
 

@@ -1,7 +1,6 @@
-namespace SitecoreDocumentor.Core.Models
+namespace SitecoreDocumentor.Web.Models
 {
     using System;
-    using Sitecore.Data.Items;
 
     [Serializable]
     public class RenderingMetaItem : ModelBase

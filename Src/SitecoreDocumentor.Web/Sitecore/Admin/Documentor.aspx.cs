@@ -2,7 +2,10 @@
 {
     using System;
     using System.Web.UI;
-    using SitecoreDocumentor.Core.Models;
+    using SitecoreDocumentor.Web.Models;
+    using SitecoreDocumentor.Web.Presenters;
+    using SitecoreDocumentor.Web.Services;
+    using SitecoreDocumentor.Web.Views;
 
     public partial class Documentor : Page, IDocumentorView
     {
