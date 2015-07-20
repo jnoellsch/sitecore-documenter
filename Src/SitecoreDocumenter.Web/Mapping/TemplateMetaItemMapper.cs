@@ -39,7 +39,6 @@ namespace SitecoreDocumenter.Web.Mapping
                    };
         }
 
-
         private IList<TemplateMetaItem> FillTemplateBases(Item template)
         {
             var noiseTemplates = new[] { Constants.Templates.StandardTemplate };

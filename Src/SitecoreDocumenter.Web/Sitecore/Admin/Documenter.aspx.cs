@@ -12,20 +12,6 @@
     {
         private DocumenterPresenter _presenter;
 
-        protected override void OnInit(EventArgs args)
-        {
-            this.CheckSecurity(true);
-            base.OnInit(args);
-        }
-
-        protected override void OnLoad(EventArgs e)
-        {
-            base.OnLoad(e);
-            this._presenter = new DocumenterPresenter(this, new DocumenterService());
-            
-            this.btnSubmit.Click += (sender, args) => { this._presenter.LoadData(); };
-        }
-
         public string TemplateRootPath
         {
             get
@@ -80,7 +66,8 @@
             }
         }
 
-        public IEnumerable<string> ErrorMessages {
+        public IEnumerable<string> ErrorMessages
+        {
             get
             {
                 return (IEnumerable<string>)this.rptErrMsgs.DataSource;
@@ -97,6 +84,20 @@
             this.ucRenderings.DataBind();
             this.ucTemplates.DataBind();
             base.DataBind();
+        }
+
+        protected override void OnInit(EventArgs args)
+        {
+            this.CheckSecurity(true);
+            base.OnInit(args);
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            this._presenter = new DocumenterPresenter(this, new DocumenterService());
+
+            this.btnSubmit.Click += (sender, args) => { this._presenter.LoadData(); };
         }
     }
 }

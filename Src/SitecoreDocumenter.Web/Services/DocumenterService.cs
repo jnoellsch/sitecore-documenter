@@ -1,35 +1,29 @@
 ﻿namespace SitecoreDocumenter.Web.Services
 {
-    using System.Collections.Generic;
     using System.Linq;
-    using Sitecore;
+    using Sitecore.Configuration;
     using Sitecore.Data;
-    using Sitecore.Data.Fields;
     using Sitecore.Data.Items;
-    using Sitecore.Resources.Media;
-    using Sitecore.Visualization;
     using SitecoreDocumenter.Web.Mapping;
     using SitecoreDocumenter.Web.Models;
-    using Constants = Constants;
 
     public class DocumenterService
     {
-        private readonly ID[] _fldrTemplates = {
-                                                    Constants.Templates.RenderingFolder, 
-                                                    Constants.Templates.TemplateFolder,
-                                                    Constants.Templates.SublayoutFolder,
-                                                    Constants.Templates.Folder
-                                                };
+        private readonly ID[] _fldrTemplates =
+        {
+            Constants.Templates.RenderingFolder, Constants.Templates.TemplateFolder,
+            Constants.Templates.SublayoutFolder, Constants.Templates.Folder
+        };
 
         private Database Database
         {
             get
             {
-                return Sitecore.Configuration.Factory.GetDatabase(Constants.Databases.Master);
+                return Factory.GetDatabase(Constants.Databases.Master);
             }
         }
 
-        public ID[] FolderTemplates
+        private ID[] FolderTemplates
         {
             get
             {
@@ -73,7 +67,6 @@
                     .Where(x => this.FolderTemplates.Contains(x.TemplateID))
                     .Select(x => fldrMapper.Map(x))
                     .ToList();
-                ;
 
                 foreach (var f in fldrs)
                 {
@@ -115,7 +108,6 @@
                     .Where(x => this.FolderTemplates.Contains(x.TemplateID))
                     .Select(x => fldrMapper.Map(x))
                     .ToList();
-                ;
 
                 foreach (var f in fldrs)
                 {
@@ -137,6 +129,5 @@
 
             return result;
         }
-
     }
 }
