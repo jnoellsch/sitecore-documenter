@@ -1,12 +1,12 @@
-﻿namespace SitecoreDocumentor.Web.Mapping
+﻿namespace SitecoreDocumenter.Web.Mapping
 {
     using Sitecore;
     using Sitecore.Data;
     using Sitecore.Data.Fields;
     using Sitecore.Data.Items;
     using Sitecore.Resources.Media;
-    using SitecoreDocumentor.Web.Models;
-    using Constants = SitecoreDocumentor.Web.Constants;
+    using SitecoreDocumenter.Web.Models;
+    using Constants = Constants;
 
     public class RenderingMetaItemMapper : IObjectMapper<Item, RenderingMetaItem>
     {

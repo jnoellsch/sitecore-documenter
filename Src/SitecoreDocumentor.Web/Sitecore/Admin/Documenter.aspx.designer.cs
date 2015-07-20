@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SitecoreDocumentor.Web {
+namespace SitecoreDocumenter.Web {
     
     
-    public partial class Documentor {
+    public partial class Documenter {
         
         /// <summary>
         /// form1 control.
@@ -64,7 +64,7 @@ namespace SitecoreDocumentor.Web {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::SitecoreDocumentor.Web.UserControls.RenderingsList ucRenderings;
+        protected global::SitecoreDocumenter.Web.UserControls.RenderingsList ucRenderings;
         
         /// <summary>
         /// ucTemplates control.
@@ -73,6 +73,6 @@ namespace SitecoreDocumentor.Web {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::SitecoreDocumentor.Web.UserControls.TemplatesList ucTemplates;
+        protected global::SitecoreDocumenter.Web.UserControls.TemplatesList ucTemplates;
     }
 }

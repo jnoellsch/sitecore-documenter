@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Documentor.aspx.cs" Inherits="SitecoreDocumentor.Web.Documentor" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Documenter.aspx.cs" Inherits="SitecoreDocumenter.Web.Documenter" %>
 
 <%@ Register Src="~/Sitecore/Admin/UserControls/TemplatesList.ascx" TagPrefix="uc" TagName="TemplatesList" %>
 <%@ Register Src="~/Sitecore/Admin/UserControls/RenderingsList.ascx" TagPrefix="uc" TagName="RenderingsList" %>
@@ -7,7 +7,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Sitecore Documentor</title>
+    <title>Documenter</title>
     <link rel="stylesheet" href="//ajax.aspnetcdn.com/ajax/bootstrap/3.3.4/css/bootstrap.min.css" />
     <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
     <script src="//ajax.aspnetcdn.com/ajax/bootstrap/3.3.4/bootstrap.min.js"></script>

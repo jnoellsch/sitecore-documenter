@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace SitecoreDocumentor.Web.Mapping
+namespace SitecoreDocumenter.Web.Mapping
 {
     using Sitecore;
     using Sitecore.Data;
     using Sitecore.Data.Fields;
     using Sitecore.Data.Items;
-    using SitecoreDocumentor.Web.Models;
-    using Constants = SitecoreDocumentor.Web.Constants;
+    using SitecoreDocumenter.Web.Models;
+    using Constants = Constants;
 
     public class TemplateMetaItemMapper : IObjectMapper<Item, TemplateMetaItem>
     {

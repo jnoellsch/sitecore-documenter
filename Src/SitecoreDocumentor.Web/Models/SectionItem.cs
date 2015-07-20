@@ -1,4 +1,4 @@
-﻿namespace SitecoreDocumentor.Web.Models
+﻿namespace SitecoreDocumenter.Web.Models
 {
     using System;
 

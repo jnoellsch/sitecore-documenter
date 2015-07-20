@@ -1,10 +1,10 @@
-﻿namespace SitecoreDocumentor.Web.UserControls
+﻿namespace SitecoreDocumenter.Web.UserControls
 {
     using System;
     using System.Linq;
     using System.Web.UI;
     using System.Web.UI.WebControls;
-    using SitecoreDocumentor.Web.Models;
+    using SitecoreDocumenter.Web.Models;
 
     public partial class TemplatesList : UserControl
     {

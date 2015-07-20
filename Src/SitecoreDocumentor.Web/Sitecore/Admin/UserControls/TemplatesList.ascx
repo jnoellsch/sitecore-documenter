@@ -1,11 +1,11 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="TemplatesList.ascx.cs" Inherits="SitecoreDocumentor.Web.UserControls.TemplatesList" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="TemplatesList.ascx.cs" Inherits="SitecoreDocumenter.Web.UserControls.TemplatesList" %>
 
 <div class="page-header">
     <h1>Templates</h1>
 </div>
 <div class="row">
     <div class="col-md-2">
-        <asp:Repeater runat="server" ID="rptJumplinks" ItemType="SitecoreDocumentor.Web.Models.TemplateFolder">
+        <asp:Repeater runat="server" ID="rptJumplinks" ItemType="SitecoreDocumenter.Web.Models.TemplateFolder">
             <HeaderTemplate>
                 <div class="list-group">
             </HeaderTemplate>
@@ -16,12 +16,12 @@
         </asp:Repeater>
     </div>
     <div class="col-md-10">
-        <asp:Repeater runat="server" ID="rptTemplateFolders" ItemType="SitecoreDocumentor.Web.Models.TemplateFolder">
+        <asp:Repeater runat="server" ID="rptTemplateFolders" ItemType="SitecoreDocumenter.Web.Models.TemplateFolder">
             <ItemTemplate>
                 <h2 id="<%# Item.Id %>"><%# Item.Name %></h2>
                 <p class="muted"><%# Item.Path %></p>
 
-                <asp:Repeater ID="rptTemplates" runat="server" ItemType="SitecoreDocumentor.Web.Models.TemplateMetaItem">
+                <asp:Repeater ID="rptTemplates" runat="server" ItemType="SitecoreDocumenter.Web.Models.TemplateMetaItem">
                     <ItemTemplate>
                         <h3 id="<%# Item.Id %>">
                             <img src="<%# "/sitecore/shell/~/icon/" + Item.Icon %>" />
@@ -29,7 +29,7 @@
                         </h3>
                         <p><%# Item.Description %></p>
 
-                        <asp:Repeater runat="server" ID="rptBaseTemplates" ItemType="SitecoreDocumentor.Web.Models.TemplateMetaItem">
+                        <asp:Repeater runat="server" ID="rptBaseTemplates" ItemType="SitecoreDocumenter.Web.Models.TemplateMetaItem">
                             <HeaderTemplate>
                                 <p class="muted">Inherited from: </p>
                                 <ul>
@@ -40,7 +40,7 @@
                             <FooterTemplate></ul></FooterTemplate>
                         </asp:Repeater>
 
-                        <asp:Repeater runat="server" ID="rptInsertOptions" ItemType="SitecoreDocumentor.Web.Models.TemplateMetaItem">
+                        <asp:Repeater runat="server" ID="rptInsertOptions" ItemType="SitecoreDocumenter.Web.Models.TemplateMetaItem">
                             <HeaderTemplate>
                                 <p class="muted">Allowed children: </p>
                                 <ul>
@@ -51,7 +51,7 @@
                             <FooterTemplate></ul></FooterTemplate>
                         </asp:Repeater>
 
-                        <asp:Repeater runat="server" ID="rptFields" ItemType="SitecoreDocumentor.Web.Models.FieldItem">
+                        <asp:Repeater runat="server" ID="rptFields" ItemType="SitecoreDocumenter.Web.Models.FieldItem">
                             <HeaderTemplate>
                                 <table class="table table-bordered table-condensed">
                                     <caption>Fields:</caption>

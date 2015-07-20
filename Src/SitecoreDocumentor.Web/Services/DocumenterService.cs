@@ -1,4 +1,4 @@
-﻿namespace SitecoreDocumentor.Web.Services
+﻿namespace SitecoreDocumenter.Web.Services
 {
     using System.Collections.Generic;
     using System.Linq;
@@ -8,11 +8,11 @@
     using Sitecore.Data.Items;
     using Sitecore.Resources.Media;
     using Sitecore.Visualization;
-    using SitecoreDocumentor.Web.Mapping;
-    using SitecoreDocumentor.Web.Models;
-    using Constants = SitecoreDocumentor.Web.Constants;
+    using SitecoreDocumenter.Web.Mapping;
+    using SitecoreDocumenter.Web.Models;
+    using Constants = Constants;
 
-    public class DocumentorService
+    public class DocumenterService
     {
         private readonly ID[] _fldrTemplates = {
                                                     Constants.Templates.RenderingFolder, 

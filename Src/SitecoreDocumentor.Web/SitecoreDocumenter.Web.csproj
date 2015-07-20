@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SitecoreDocumentor.Web</RootNamespace>
-    <AssemblyName>SitecoreDocumentor.Web</AssemblyName>
+    <RootNamespace>SitecoreDocumenter.Web</RootNamespace>
+    <AssemblyName>SitecoreDocumenter.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -75,16 +75,16 @@
     <Compile Include="Models\TemplateMetaItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SitecoreExtensions.cs" />
-    <Compile Include="Sitecore\Admin\Documentor.aspx.cs">
-      <DependentUpon>Documentor.aspx</DependentUpon>
+    <Compile Include="Sitecore\Admin\Documenter.aspx.cs">
+      <DependentUpon>Documenter.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Sitecore\Admin\Documentor.aspx.designer.cs">
-      <DependentUpon>Documentor.aspx</DependentUpon>
+    <Compile Include="Sitecore\Admin\Documenter.aspx.designer.cs">
+      <DependentUpon>Documenter.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Presenters\DocumentorPresenter.cs" />
-    <Compile Include="Services\DocumentorService.cs" />
-    <Compile Include="Views\IDocumentorView.cs" />
+    <Compile Include="Presenters\DocumenterPresenter.cs" />
+    <Compile Include="Services\DocumenterService.cs" />
+    <Compile Include="Views\IDocumenterView.cs" />
     <Compile Include="Sitecore\Admin\UserControls\RenderingsList.ascx.cs">
       <DependentUpon>RenderingsList.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -102,7 +102,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Sitecore\Admin\Documentor.aspx" />
+    <Content Include="Sitecore\Admin\Documenter.aspx" />
     <Content Include="packages.config" />
     <Content Include="Sitecore\Admin\UserControls\RenderingsList.ascx" />
     <Content Include="Sitecore\Admin\UserControls\TemplatesList.ascx" />

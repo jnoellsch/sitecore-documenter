@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SitecoreDocumentor.Web.UserControls {
+namespace SitecoreDocumenter.Web.UserControls {
     
     
     public partial class TemplatesList {

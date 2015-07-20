@@ -39,8 +39,6 @@
     </xitems>
     <xfiles>
       <Entries>
-        <x-item>/bin/SitecoreDocumentor.Web.dll</x-item>
-        <x-item>/bin/SitecoreDocumentor.Web.pdb</x-item>
         <x-item>/sitecore/admin/UserControls</x-item>
         <x-item>/sitecore/admin/Documentor.aspx</x-item>
       </Entries>

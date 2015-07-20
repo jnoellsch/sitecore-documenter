@@ -1,16 +1,16 @@
-﻿namespace SitecoreDocumentor.Web
+﻿namespace SitecoreDocumenter.Web
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using SitecoreDocumentor.Web.Models;
-    using SitecoreDocumentor.Web.Presenters;
-    using SitecoreDocumentor.Web.Services;
-    using SitecoreDocumentor.Web.Views;
+    using SitecoreDocumenter.Web.Models;
+    using SitecoreDocumenter.Web.Presenters;
+    using SitecoreDocumenter.Web.Services;
+    using SitecoreDocumenter.Web.Views;
 
-    public partial class Documentor : Sitecore.sitecore.admin.AdminPage, IDocumentorView
+    public partial class Documenter : Sitecore.sitecore.admin.AdminPage, IDocumenterView
     {
-        private DocumentorPresenter _presenter;
+        private DocumenterPresenter _presenter;
 
         protected override void OnInit(EventArgs args)
         {
@@ -21,7 +21,7 @@
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            this._presenter = new DocumentorPresenter(this, new DocumentorService());
+            this._presenter = new DocumenterPresenter(this, new DocumenterService());
             
             this.btnSubmit.Click += (sender, args) => { this._presenter.LoadData(); };
         }

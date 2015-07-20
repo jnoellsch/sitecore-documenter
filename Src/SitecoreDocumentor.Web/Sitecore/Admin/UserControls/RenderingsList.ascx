@@ -1,11 +1,11 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="RenderingsList.ascx.cs" Inherits="SitecoreDocumentor.Web.UserControls.RenderingsList" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="RenderingsList.ascx.cs" Inherits="SitecoreDocumenter.Web.UserControls.RenderingsList" %>
 
 <div class="page-header">
     <h1>Renderings</h1>
 </div>
 <div class="row">
     <div class="col-md-2">
-        <asp:Repeater runat="server" ID="rptJumplinks" ItemType="SitecoreDocumentor.Web.Models.RenderingFolder">
+        <asp:Repeater runat="server" ID="rptJumplinks" ItemType="SitecoreDocumenter.Web.Models.RenderingFolder">
             <HeaderTemplate>
                 <div class="list-group">
             </HeaderTemplate>
@@ -16,12 +16,12 @@
         </asp:Repeater>
     </div>
     <div class="col-md-10">
-        <asp:Repeater runat="server" ID="rptRenderingFolders" ItemType="SitecoreDocumentor.Web.Models.RenderingFolder">
+        <asp:Repeater runat="server" ID="rptRenderingFolders" ItemType="SitecoreDocumenter.Web.Models.RenderingFolder">
             <ItemTemplate>
                 <h2 id="<%# Item.Id %>"><%# Item.Name %></h2>
                 <p class="muted"><%# Item.Path %></p>
 
-                <asp:Repeater runat="server" ID="rptRenderings" ItemType="SitecoreDocumentor.Web.Models.RenderingMetaItem">
+                <asp:Repeater runat="server" ID="rptRenderings" ItemType="SitecoreDocumenter.Web.Models.RenderingMetaItem">
                     <HeaderTemplate>
                         <table class="table table-bordered table-condensed">
                             <thead>

@@ -1,18 +1,18 @@
-﻿namespace SitecoreDocumentor.Web.Presenters
+﻿namespace SitecoreDocumenter.Web.Presenters
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using SitecoreDocumentor.Web.Services;
-    using SitecoreDocumentor.Web.Views;
+    using SitecoreDocumenter.Web.Services;
+    using SitecoreDocumenter.Web.Views;
 
-    public class DocumentorPresenter
+    public class DocumenterPresenter
     {
-        private readonly IDocumentorView _view;
+        private readonly IDocumenterView _view;
 
-        private readonly DocumentorService _service;
+        private readonly DocumenterService _service;
 
-        public DocumentorPresenter(IDocumentorView view, DocumentorService service)
+        public DocumenterPresenter(IDocumenterView view, DocumenterService service)
         {
             if (view == null) throw new ArgumentNullException("view");
             if (service == null) throw new ArgumentNullException("service");

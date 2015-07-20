@@ -1,4 +1,4 @@
-﻿namespace SitecoreDocumentor.Web
+﻿namespace SitecoreDocumenter.Web
 {
     using Sitecore.Data.Fields;
     using Sitecore.Resources.Media;

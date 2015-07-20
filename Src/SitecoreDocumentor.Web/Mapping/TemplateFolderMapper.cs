@@ -1,7 +1,7 @@
-﻿namespace SitecoreDocumentor.Web.Mapping
+﻿namespace SitecoreDocumenter.Web.Mapping
 {
     using Sitecore.Data.Items;
-    using SitecoreDocumentor.Web.Models;
+    using SitecoreDocumenter.Web.Models;
 
     public class TemplateFolderMapper : IObjectMapper<Item, TemplateFolder>
     {
