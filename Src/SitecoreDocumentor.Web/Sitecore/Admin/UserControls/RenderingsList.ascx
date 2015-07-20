@@ -19,7 +19,7 @@
         <asp:Repeater runat="server" ID="rptRenderingFolders" ItemType="SitecoreDocumentor.Web.Models.RenderingFolder">
             <ItemTemplate>
                 <h2 id="<%# Item.Id %>"><%# Item.Name %></h2>
-                <p class="muted">Path: <%# Item.Path %></p>
+                <p class="muted"><%# Item.Path %></p>
 
                 <asp:Repeater runat="server" ID="rptRenderings" ItemType="SitecoreDocumentor.Web.Models.RenderingMetaItem">
                     <HeaderTemplate>
@@ -29,7 +29,8 @@
                                     <th class="tblcol-icon"></th>
                                     <th class="tblcol-name">Name</th>
                                     <th>Description</th>
-                                    <th>Image</th>
+                                    <th class="tblcol-datsource">Data source</th>
+                                    <th class="tblcol-image">Image</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -41,6 +42,10 @@
                             </td>
                             <td><%# Item.Name %></td>
                             <td><%# Item.Description %></td>
+                            <td class="tblcol-datasource">
+                                <span runat="server" Visible="<%# Item.DataSourceTemplate != null %>"><a href="#<%# Item.DataSourceTemplate != null ? Item.DataSourceTemplate.Id : Guid.Empty %>"><%# Item.DataSourceTemplate != null ? Item.DataSourceTemplate.Name : string.Empty %></a><br /></span>
+                                <span runat="server" Visible="<%# !string.IsNullOrEmpty(Item.DataSourceLocation) %>"><%# Item.DataSourceLocation %><br /></span>
+                            </td>
                             <td class="tblcol-image">
                                 <asp:Image runat="server" ImageUrl="<%# Item.ThumbnailImage %>" Visible="<%# !string.IsNullOrEmpty(Item.ThumbnailImage) %>" />
                             </td>

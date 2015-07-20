@@ -64,6 +64,10 @@
             max-width: 400px;
             height: auto;
         }
+
+        .tblcol-datasource {
+            width: 250px;
+        }
     </style>
 </head>
 <body>

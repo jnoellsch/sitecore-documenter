@@ -9,7 +9,7 @@ namespace SitecoreDocumentor.Web.Models
         public string Icon { get; set; }
         public string ThumbnailImage { get; set; }
         public string FullImage { get; set; }
-        public string DataSourceTemplate { get; set; }
+        public TemplateMetaItem DataSourceTemplate { get; set; }
         public string DataSourceLocation { get; set; }
     }
 }

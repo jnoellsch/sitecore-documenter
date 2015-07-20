@@ -90,7 +90,7 @@
                                      ThumbnailImage = x.Fields[FieldIDs.Thumbnail].GetMediaUrlSafe(),
                                      Description = x.Fields[Constants.Fields.LongDescription].Value,
                                      DataSourceLocation = x.Fields[Constants.Fields.DataSourceLocation].Value,
-                                     DataSourceTemplate = x.Fields[Constants.Fields.DataSourceTemplate].Value
+                                     DataSourceTemplate = this.FillRenderingDataSourceTemplate(x)
                                  })
                     .ToList();
 
@@ -155,6 +155,22 @@
             }
 
             return result;
+        }
+
+        private TemplateMetaItem FillRenderingDataSourceTemplate(Item item)
+        {
+            var templateItem = this.Database.GetItem(item.Fields[Constants.Fields.DataSourceTemplate].Value);
+            if (templateItem == null)
+            {
+                return null;
+            }
+
+            return new TemplateMetaItem()
+                   {
+                       Id = templateItem.ID.ToGuid(),
+                       Path = templateItem.Paths.GetPath(ItemPathType.Name),
+                       Name = templateItem.DisplayName
+                   };
         }
 
         private IList<TemplateMetaItem> FillTemplateBases(Item template)
