@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using SitecoreDocumentor.Web.Models;
     using SitecoreDocumentor.Web.Presenters;
     using SitecoreDocumentor.Web.Services;
@@ -61,7 +62,7 @@
             set
             {
                 this.ViewState["Templates"] = value;
-                this.ucTemplates.DataSource = value.Folders;
+                this.ucTemplates.DataSource = value.Folders.Any() ? value.Folders : new List<TemplateFolder>() { value };
             }
         }
 
@@ -75,7 +76,7 @@
             set
             {
                 this.ViewState["Renderings"] = value;
-                this.ucRenderings.DataSource = value.Folders;
+                this.ucRenderings.DataSource = value.Folders.Any() ? value.Folders : new List<RenderingFolder>() { value };
             }
         }
 

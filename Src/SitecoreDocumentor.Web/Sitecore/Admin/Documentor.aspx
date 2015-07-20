@@ -84,11 +84,11 @@
                 <div class="form form-inline">
                     <div class="form-group">
                         <label class="control-label">Rendering Root</label>
-                        <asp:TextBox runat="server" ID="txtRenderingRoot" CssClass="form-control" Placeholder="Rendering path" Text="/sitecore/layout/Renderings/Rolanddga_com" />
+                        <asp:TextBox runat="server" ID="txtRenderingRoot" CssClass="form-control" Placeholder="Rendering path" Text="/sitecore/layout/Renderings/Sample" />
                     </div>
                     <div class="form-group">
                         <label class="control-label">Template Root</label>
-                        <asp:TextBox runat="server" ID="txtTemplateRoot" CssClass="form-control" Placeholder="Template path" Text="/sitecore/templates/Rolanddga_com" />
+                        <asp:TextBox runat="server" ID="txtTemplateRoot" CssClass="form-control" Placeholder="Template path" Text="/sitecore/templates/Sample" />
                     </div>
                     <asp:Button runat="server" ID="btnSubmit" CssClass="btn btn-primary" Text="Run" />
                 </div>
