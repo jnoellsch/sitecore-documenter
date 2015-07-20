@@ -1,5 +1,8 @@
 # Sitecore Documenter
-Produces detailed information of custom Sitecore renderings and templates for inclusion in technical documentation.  
+Produces detailed information of custom Sitecore renderings and templates for inclusion in technical documentation. 
+
+To use, install the ZIP module from the Packages directory in the repository. 
+Once installed, browse to /sitecore/admin/documenter.aspx to process the documentation.
 
 ## Folders
 * Name
