@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace SitecoreDocumenter.Web.Mapping
+﻿namespace SitecoreDocumenter.Web.Mapping
 {
+    using System.Collections.Generic;
+    using System.Linq;
     using Sitecore;
+    using Sitecore.Configuration;
     using Sitecore.Data;
     using Sitecore.Data.Fields;
     using Sitecore.Data.Items;
     using SitecoreDocumenter.Web.Models;
-    using Constants = Constants;
+    using Constants = SitecoreDocumenter.Web.Constants;
 
     public class TemplateMetaItemMapper : IObjectMapper<Item, TemplateMetaItem>
     {
@@ -18,7 +16,7 @@ namespace SitecoreDocumenter.Web.Mapping
         {
             get
             {
-                return Sitecore.Configuration.Factory.GetDatabase(Constants.Databases.Master);
+                return Factory.GetDatabase(Constants.Databases.Master);
             }
         }
 

@@ -8,8 +8,8 @@
 //------------------------------------------------------------------------------
 
 namespace SitecoreDocumenter.Web.UserControls {
-    
-    
+    using System.Web.UI.WebControls;
+
     public partial class RenderingsList {
         
         /// <summary>
@@ -19,7 +19,7 @@ namespace SitecoreDocumenter.Web.UserControls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptJumplinks;
+        protected Repeater rptJumplinks;
         
         /// <summary>
         /// rptRenderingFolders control.
@@ -28,6 +28,6 @@ namespace SitecoreDocumenter.Web.UserControls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptRenderingFolders;
+        protected Repeater rptRenderingFolders;
     }
 }

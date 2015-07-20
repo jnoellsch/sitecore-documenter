@@ -1,12 +1,13 @@
 ﻿namespace SitecoreDocumenter.Web.Mapping
 {
     using Sitecore;
+    using Sitecore.Configuration;
     using Sitecore.Data;
     using Sitecore.Data.Fields;
     using Sitecore.Data.Items;
     using Sitecore.Resources.Media;
     using SitecoreDocumenter.Web.Models;
-    using Constants = Constants;
+    using Constants = SitecoreDocumenter.Web.Constants;
 
     public class RenderingMetaItemMapper : IObjectMapper<Item, RenderingMetaItem>
     {
@@ -14,7 +15,7 @@
         {
             get
             {
-                return Sitecore.Configuration.Factory.GetDatabase(Constants.Databases.Master);
+                return Factory.GetDatabase(Constants.Databases.Master);
             }
         }
 

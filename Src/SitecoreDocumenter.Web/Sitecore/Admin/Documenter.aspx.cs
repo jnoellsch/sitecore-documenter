@@ -3,12 +3,13 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using Sitecore.sitecore.admin;
     using SitecoreDocumenter.Web.Models;
     using SitecoreDocumenter.Web.Presenters;
     using SitecoreDocumenter.Web.Services;
     using SitecoreDocumenter.Web.Views;
 
-    public partial class Documenter : Sitecore.sitecore.admin.AdminPage, IDocumenterView
+    public partial class Documenter : AdminPage, IDocumenterView
     {
         private DocumenterPresenter _presenter;
 
