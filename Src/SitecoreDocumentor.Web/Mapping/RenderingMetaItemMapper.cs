@@ -14,7 +14,7 @@
         {
             get
             {
-                return Sitecore.Configuration.Factory.GetDatabase("master");
+                return Sitecore.Configuration.Factory.GetDatabase(Constants.Databases.Master);
             }
         }
 
@@ -27,11 +27,14 @@
                        Id = source.ID.ToGuid(),
                        Path = source.Paths.GetPath(ItemPathType.Name),
                        Name = source.DisplayName,
-                       Icon = source.Fields[FieldIDs.Icon].GetValue(true, true),
+                       Icon = !string.IsNullOrEmpty(source.Fields[FieldIDs.Icon].GetValue(true))
+                               ? source.Fields[FieldIDs.Icon].GetValue(true)
+                               : "Software/16x16/element.png",
                        ThumbnailImage = source.Fields[FieldIDs.Thumbnail].GetMediaUrlSafe(),
                        FullImage = this.MakeFullImage(source),
                        Description = source.Fields[Constants.Fields.LongDescription].Value,
-                       DataSourceLocation = source.Fields[Constants.Fields.DataSourceLocation].Value,
+                       DataSourceLocation =
+                           source.Fields[Constants.Fields.DataSourceLocation].Value,
                        DataSourceTemplate = this.FillRenderingDataSourceTemplate(source)
                    };
         }
