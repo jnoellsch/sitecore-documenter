@@ -39,15 +39,13 @@
 
         public RenderingFolder GetRenderings(string rootPath)
         {
-            var rendering = new RenderingFolder();
-            this.GetRenderingsDeep(rootPath, rendering);
-            return rendering;
+            var result = this.GetRenderingsDeep(rootPath);
+            return result;
         }
 
         public TemplateFolder GetTemplates(string rootPath)
         {
-            var result = new TemplateFolder();
-            this.GetTemplatesDeep(rootPath, result);
+            var result = this.GetTemplatesDeep(rootPath);
             return result;
         }
 
@@ -56,7 +54,7 @@
             return this.Database.GetItem(path) != null;
         }
 
-        private RenderingFolder GetRenderingsDeep(string rootPath, RenderingFolder result)
+        private RenderingFolder GetRenderingsDeep(string rootPath)
         {
             var metaItemMapper = new RenderingMetaItemMapper();
             var fldrMapper = new RenderingFolderMapper();
@@ -64,7 +62,7 @@
             // get root item - go deeper if are sub items
             // otherwise, assume empty folder or bad path
             Item root = this.Database.GetItem(rootPath);
-            result.Name = root.DisplayName;
+            RenderingFolder result = fldrMapper.Map(root);
 
             if (root.HasChildren)
             {
@@ -79,7 +77,7 @@
 
                 foreach (var f in fldrs)
                 {
-                    result.Folders.Add(this.GetRenderingsDeep(f.Path, f));
+                    result.Folders.Add(this.GetRenderingsDeep(f.Path));
                 }
                 
                 // grab renderings, add only
@@ -98,7 +96,7 @@
             return result;
         }
 
-        private TemplateFolder GetTemplatesDeep(string rootPath, TemplateFolder result)
+        private TemplateFolder GetTemplatesDeep(string rootPath)
         {
             var metaItemMapper = new TemplateMetaItemMapper();
             var fldrMapper = new TemplateFolderMapper();
@@ -106,7 +104,7 @@
             // get root item - go deeper if are sub items
             // otherwise, assume empty folder or bad path
             Item root = this.Database.GetItem(rootPath);
-            result.Name = root.DisplayName;
+            TemplateFolder result = fldrMapper.Map(root);
 
             if (root.HasChildren)
             {
@@ -121,7 +119,7 @@
 
                 foreach (var f in fldrs)
                 {
-                    result.Folders.Add(this.GetTemplatesDeep(f.Path, f));
+                    result.Folders.Add(this.GetTemplatesDeep(f.Path));
                 }
 
                 // grab templates, add only
