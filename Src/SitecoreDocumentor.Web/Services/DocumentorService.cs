@@ -49,6 +49,11 @@
             return result;
         }
 
+        public bool IsValidItem(string path)
+        {
+            return this.Database.GetItem(path) != null;
+        }
+
         private RenderingFolder GetRenderingsDeep(string rootPath, RenderingFolder result)
         {
             // get root item - go deeper if are sub items

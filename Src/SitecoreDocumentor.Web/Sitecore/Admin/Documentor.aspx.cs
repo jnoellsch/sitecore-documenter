@@ -1,6 +1,7 @@
 ﻿namespace SitecoreDocumentor.Web
 {
     using System;
+    using System.Collections.Generic;
     using System.Web.UI;
     using SitecoreDocumentor.Web.Models;
     using SitecoreDocumentor.Web.Presenters;
@@ -73,10 +74,23 @@
             }
         }
 
+        public IEnumerable<string> ErrorMessages {
+            get
+            {
+                return (IEnumerable<string>)this.rptErrMsgs.DataSource;
+            }
+
+            set
+            {
+                this.rptErrMsgs.DataSource = value;
+            }
+        }
+
         public override void DataBind()
         {
             this.ucRenderings.DataBind();
             this.ucTemplates.DataBind();
+            base.DataBind();
         }
     }
 }

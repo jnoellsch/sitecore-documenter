@@ -75,6 +75,12 @@
         <!-- Form -->
         <div class="row">
             <div class="col-md-12">
+                <asp:Repeater runat="server" id="rptErrMsgs" ItemType="System.String">
+                    <HeaderTemplate><div class="alert alert-warning"></HeaderTemplate>
+                    <ItemTemplate><p><%# Item %></p></ItemTemplate>
+                    <FooterTemplate></div></FooterTemplate>
+                </asp:Repeater>
+                
                 <div class="form form-inline">
                     <div class="form-group">
                         <label class="control-label">Rendering Root</label>
