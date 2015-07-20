@@ -39,10 +39,11 @@
     </xitems>
     <xfiles>
       <Entries>
-        <x-item>/sitecore/admin/UserControls</x-item>
-        <x-item>/sitecore/admin/Documenter.aspx</x-item>
         <x-item>/bin/SitecoreDocumenter.Web.dll</x-item>
         <x-item>/bin/SitecoreDocumenter.Web.pdb</x-item>
+        <x-item>/sitecore/admin/UserControls/RenderingsList.ascx</x-item>
+        <x-item>/sitecore/admin/UserControls/TemplatesList.ascx</x-item>
+        <x-item>/sitecore/admin/Documenter.aspx</x-item>
       </Entries>
       <Converter>
         <FileToEntryConverter>

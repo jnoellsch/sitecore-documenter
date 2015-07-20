@@ -3,9 +3,9 @@
 ################################################################################
 
 /Packages/Newtonsoft.Json.6.0.4
-/Src/SitecoreDocumentor.Core/bin
-/Src/SitecoreDocumentor.Core/obj
-/Src/SitecoreDocumentor.Web/bin
-/Src/SitecoreDocumentor.Web/obj
+/Src/SitecoreDocumenter.Core/bin
+/Src/SitecoreDocumenter.Core/obj
+/Src/SitecoreDocumenter.Web/bin
+/Src/SitecoreDocumenter.Web/obj
 *.user
 *.suo

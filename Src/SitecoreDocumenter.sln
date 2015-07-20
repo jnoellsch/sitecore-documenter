@@ -7,7 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SitecoreDocumenter.Web", "S
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Packages", "Packages", "{0B633393-09DE-40ED-BF66-EE69DED48849}"
 	ProjectSection(SolutionItems) = preProject
-		..\Packages\SitecoreDocumenter-v1.0.anti.zip = ..\Packages\SitecoreDocumenter-v1.0.anti.zip
 		..\Packages\SitecoreDocumenter-v1.0.package = ..\Packages\SitecoreDocumenter-v1.0.package
 		..\Packages\SitecoreDocumenter-v1.0.zip = ..\Packages\SitecoreDocumenter-v1.0.zip
 	EndProjectSection
