@@ -96,6 +96,7 @@
     <Content Include="packages.config" />
     <Content Include="Sitecore\Admin\UserControls\RenderingsList.ascx" />
     <Content Include="Sitecore\Admin\UserControls\TemplatesList.ascx" />
+    <Content Include="app.config" />
     <None Include="Properties\PublishProfiles\Noellsch.pubxml" />
   </ItemGroup>
   <PropertyGroup>

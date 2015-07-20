@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SitecoreDocumentor.Core", "Src\SitecoreDocumentor.Core\SitecoreDocumentor.Core.csproj", "{B290A412-83DB-46AE-BDCC-1F64D8C265D4}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SitecoreDocumentor.Web", "Src\SitecoreDocumentor.Web\SitecoreDocumentor.Web.csproj", "{77CB3E72-BCFE-402D-8DC9-8954AAC1AE46}"
 EndProject
 Global
@@ -13,10 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B290A412-83DB-46AE-BDCC-1F64D8C265D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B290A412-83DB-46AE-BDCC-1F64D8C265D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B290A412-83DB-46AE-BDCC-1F64D8C265D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B290A412-83DB-46AE-BDCC-1F64D8C265D4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{77CB3E72-BCFE-402D-8DC9-8954AAC1AE46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{77CB3E72-BCFE-402D-8DC9-8954AAC1AE46}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77CB3E72-BCFE-402D-8DC9-8954AAC1AE46}.Release|Any CPU.ActiveCfg = Release|Any CPU
