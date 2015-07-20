@@ -40,7 +40,9 @@
     <xfiles>
       <Entries>
         <x-item>/sitecore/admin/UserControls</x-item>
-        <x-item>/sitecore/admin/Documentor.aspx</x-item>
+        <x-item>/sitecore/admin/Documenter.aspx</x-item>
+        <x-item>/bin/SitecoreDocumenter.Web.dll</x-item>
+        <x-item>/bin/SitecoreDocumenter.Web.pdb</x-item>
       </Entries>
       <Converter>
         <FileToEntryConverter>
