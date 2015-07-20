@@ -2,7 +2,7 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/Packages
+/Packages/Newtonsoft.Json.6.0.4
 /Src/SitecoreDocumentor.Core/bin
 /Src/SitecoreDocumentor.Core/obj
 /Src/SitecoreDocumentor.Web/bin
