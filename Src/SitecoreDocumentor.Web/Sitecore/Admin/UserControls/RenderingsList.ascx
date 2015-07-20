@@ -47,13 +47,13 @@
                                 <span runat="server" Visible="<%# !string.IsNullOrEmpty(Item.DataSourceLocation) %>"><%# Item.DataSourceLocation %><br /></span>
                             </td>
                             <td class="tblcol-image">
-                                <asp:Image runat="server" ImageUrl="<%# Item.ThumbnailImage %>" Visible="<%# !string.IsNullOrEmpty(Item.ThumbnailImage) %>" />
+                                <asp:Image runat="server" ImageUrl="<%# Item.Image %>" Visible="<%# !string.IsNullOrEmpty(Item.Image) %>" />
                             </td>
                         </tr>
                     </ItemTemplate>
                     <FooterTemplate>
                         </tbody>
-                                </table>
+                        </table>
                     </FooterTemplate>
                 </asp:Repeater>
             </ItemTemplate>

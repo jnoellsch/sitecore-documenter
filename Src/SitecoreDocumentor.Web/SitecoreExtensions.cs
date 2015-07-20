@@ -21,8 +21,13 @@
             }
 
             // generate image url
-            string url = MediaManager.GetMediaUrl(imageField.MediaItem).Replace("/sitecore/admin", string.Empty);
+            string url = MediaManager.GetMediaUrl(imageField.MediaItem).CleanAdminPath();
             return url;
+        }
+
+        public static string CleanAdminPath(this string path)
+        {
+            return !string.IsNullOrEmpty(path) ? path.Replace("/sitecore/admin", string.Empty) : path;
         }
     }
 }
