@@ -2,21 +2,26 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Web.UI;
     using SitecoreDocumentor.Web.Models;
     using SitecoreDocumentor.Web.Presenters;
     using SitecoreDocumentor.Web.Services;
     using SitecoreDocumentor.Web.Views;
 
-    public partial class Documentor : Page, IDocumentorView
+    public partial class Documentor : Sitecore.sitecore.admin.AdminPage, IDocumentorView
     {
         private DocumentorPresenter _presenter;
+
+        protected override void OnInit(EventArgs args)
+        {
+            this.CheckSecurity(true);
+            base.OnInit(args);
+        }
 
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
             this._presenter = new DocumentorPresenter(this, new DocumentorService());
-
+            
             this.btnSubmit.Click += (sender, args) => { this._presenter.LoadData(); };
         }
 
