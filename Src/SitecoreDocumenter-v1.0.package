@@ -1,14 +1,14 @@
 <project site="www.rolanddga.local" format="Zip Package" targetfilefolder="wwwroot">
   <Metadata>
     <metadata>
-      <PackageName>Sitecore Documentor</PackageName>
+      <PackageName>Sitecore Documenter</PackageName>
       <Author>Jim Noellsch</Author>
       <Version>1.0</Version>
       <Revision />
       <License />
       <Comment />
       <Attributes />
-      <Readme>Allows for cut and paste documentation of renderings and templates. Page used to generate output is located @ /sitecore/admin/documentor.aspx.</Readme>
+      <Readme>Allows for cut and paste documentation of renderings and templates. Page used to generate output is located @ /sitecore/admin/documenter.aspx.</Readme>
       <Publisher>Rightpoint</Publisher>
       <PostStep />
       <PackageID />
