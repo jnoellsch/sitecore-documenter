@@ -3,12 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SitecoreDocumenter.Web", "Src\SitecoreDocumenter.Web\SitecoreDocumenter.Web.csproj", "{77CB3E72-BCFE-402D-8DC9-8954AAC1AE46}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SitecoreDocumenter.Web", "SitecoreDocumenter.Web\SitecoreDocumenter.Web.csproj", "{77CB3E72-BCFE-402D-8DC9-8954AAC1AE46}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Packages", "Packages", "{0B633393-09DE-40ED-BF66-EE69DED48849}"
 	ProjectSection(SolutionItems) = preProject
-		Packages\SitecoreDocumenter-v1.0.package = Packages\SitecoreDocumenter-v1.0.package
-		Packages\SitecoreDocumenter-v1.0.zip = Packages\SitecoreDocumenter-v1.0.zip
+		..\Packages\SitecoreDocumenter-v1.0.package = ..\Packages\SitecoreDocumenter-v1.0.package
+		..\Packages\SitecoreDocumenter-v1.0.zip = ..\Packages\SitecoreDocumenter-v1.0.zip
 	EndProjectSection
 EndProject
 Global
