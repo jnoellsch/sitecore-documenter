@@ -31,5 +31,10 @@
         {
             public static readonly ID IsRequired = new ID("{59D4EE10-627C-4FD3-A964-61A88B092CBC}");
         }
+
+        public class Databases
+        {
+            public static readonly string Master = "master";
+        }
     }
 }

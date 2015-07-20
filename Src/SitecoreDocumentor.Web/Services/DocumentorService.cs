@@ -25,7 +25,7 @@
         {
             get
             {
-                return Sitecore.Configuration.Factory.GetDatabase("master");
+                return Sitecore.Configuration.Factory.GetDatabase(Constants.Databases.Master);
             }
         }
 
