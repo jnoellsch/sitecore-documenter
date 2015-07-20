@@ -55,6 +55,15 @@
         .tblrow-indent td:first-child {
             padding-left: 20px;
         }
+
+        .tblcol-image {
+            width: 250px;
+        }
+
+        .tblcol-image .img {
+            max-width: 250px;
+            height: auto;
+        }
     </style>
 </head>
 <body>

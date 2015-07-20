@@ -40,8 +40,8 @@
                             </td>
                             <td><%# Item.Name %></td>
                             <td><%# Item.Description %></td>
-                            <td>
-                                <img src="<%# Item.ThumbnailImage %>" />
+                            <td class="tblcol-image">
+                                <asp:Image runat="server" ImageUrl="<%# Item.ThumbnailImage %>" Visible="<%# !string.IsNullOrEmpty(Item.ThumbnailImage) %>" />
                             </td>
                         </tr>
                     </ItemTemplate>
