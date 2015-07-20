@@ -57,11 +57,11 @@
         }
 
         .tblcol-image {
-            width: 250px;
+            width: 400px;
         }
 
         .tblcol-image .img {
-            max-width: 250px;
+            max-width: 400px;
             height: auto;
         }
     </style>

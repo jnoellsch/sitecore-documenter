@@ -19,6 +19,7 @@
         <asp:Repeater runat="server" ID="rptRenderingFolders" ItemType="SitecoreDocumentor.Web.Models.RenderingFolder">
             <ItemTemplate>
                 <h2 id="<%# Item.Id %>"><%# Item.Name %></h2>
+                <p class="muted">Path: <%# Item.Path %></p>
 
                 <asp:Repeater runat="server" ID="rptRenderings" ItemType="SitecoreDocumentor.Web.Models.RenderingMetaItem">
                     <HeaderTemplate>
