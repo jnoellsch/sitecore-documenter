@@ -25,6 +25,16 @@
             return url;
         }
 
+        public static string GetValueWithFallback(this Field field, string fallback)
+        {
+            if (field == null)
+            {
+                return fallback;
+            }
+
+            return !string.IsNullOrEmpty(field.GetValue(true)) ? field.GetValue(true) : fallback;
+        }
+
         public static string CleanAdminPath(this string path)
         {
             return !string.IsNullOrEmpty(path) ? path.Replace("/sitecore/admin", string.Empty) : path;

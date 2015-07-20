@@ -31,9 +31,7 @@ namespace SitecoreDocumentor.Web.Mapping
                        Id = source.ID.ToGuid(),
                        Path = source.Paths.GetPath(ItemPathType.Name),
                        Name = source.DisplayName,
-                       Icon = !string.IsNullOrEmpty(source.Fields[FieldIDs.Icon].GetValue(true))
-                               ? source.Fields[FieldIDs.Icon].GetValue(true)
-                               : "Software/16x16/element.png",
+                       Icon = source.Fields[FieldIDs.Icon].GetValueWithFallback("Software/16x16/element.png"),
                        Description = source.Fields[Constants.Fields.LongDescription].Value,
                        Fields = this.GetTemplateFields(source),
                        BaseTemplates = this.FillTemplateBases(source),

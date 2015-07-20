@@ -27,9 +27,7 @@
                        Id = source.ID.ToGuid(),
                        Path = source.Paths.GetPath(ItemPathType.Name),
                        Name = source.DisplayName,
-                       Icon = !string.IsNullOrEmpty(source.Fields[FieldIDs.Icon].GetValue(true))
-                               ? source.Fields[FieldIDs.Icon].GetValue(true)
-                               : "Software/16x16/element.png",
+                       Icon = source.Fields[FieldIDs.Icon].GetValueWithFallback("Software/16x16/element.png"),
                        ThumbnailImage = source.Fields[FieldIDs.Thumbnail].GetMediaUrlSafe(),
                        FullImage = this.MakeFullImage(source),
                        Description = source.Fields[Constants.Fields.LongDescription].Value,
