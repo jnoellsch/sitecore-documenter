@@ -7,6 +7,8 @@
     using Sitecore.Data.Fields;
     using Sitecore.Data.Items;
     using Sitecore.Resources.Media;
+    using Sitecore.Visualization;
+    using SitecoreDocumentor.Web.Mapping;
     using SitecoreDocumentor.Web.Models;
     using Constants = SitecoreDocumentor.Web.Constants;
 
@@ -56,6 +58,9 @@
 
         private RenderingFolder GetRenderingsDeep(string rootPath, RenderingFolder result)
         {
+            var metaItemMapper = new RenderingMetaItemMapper();
+            var fldrMapper = new RenderingFolderMapper();
+
             // get root item - go deeper if are sub items
             // otherwise, assume empty folder or bad path
             Item root = this.Database.GetItem(rootPath);
@@ -68,12 +73,7 @@
                     .Axes
                     .GetDescendants()
                     .Where(x => this.FolderTemplates.Contains(x.TemplateID))
-                    .Select(x => new RenderingFolder()
-                                 {
-                                     Id = x.ID.ToGuid(),
-                                     Path = x.Paths.GetPath(ItemPathType.Name), 
-                                     Name = x.DisplayName
-                                 })
+                    .Select(x => fldrMapper.Map(x))
                     .ToList();
                 ;
 
@@ -86,17 +86,7 @@
                 var renderings = root
                     .Children
                     .Where(x => !this.FolderTemplates.Contains(x.TemplateID))
-                    .Select(x => new RenderingMetaItem()
-                                 {
-                                     Id = x.ID.ToGuid(),
-                                     Path = x.Paths.GetPath(ItemPathType.Name),
-                                     Name = x.DisplayName,
-                                     Icon = x.Fields[FieldIDs.Icon].GetValue(true, true),
-                                     ThumbnailImage = x.Fields[FieldIDs.Thumbnail].GetMediaUrlSafe(),
-                                     Description = x.Fields[Constants.Fields.LongDescription].Value,
-                                     DataSourceLocation = x.Fields[Constants.Fields.DataSourceLocation].Value,
-                                     DataSourceTemplate = this.FillRenderingDataSourceTemplate(x)
-                                 })
+                    .Select(x => metaItemMapper.Map(x))
                     .ToList();
 
                 foreach (var r in renderings)
@@ -110,6 +100,9 @@
 
         private TemplateFolder GetTemplatesDeep(string rootPath, TemplateFolder result)
         {
+            var metaItemMapper = new TemplateMetaItemMapper();
+            var fldrMapper = new TemplateFolderMapper();
+
             // get root item - go deeper if are sub items
             // otherwise, assume empty folder or bad path
             Item root = this.Database.GetItem(rootPath);
@@ -122,12 +115,7 @@
                     .Axes
                     .GetDescendants()
                     .Where(x => this.FolderTemplates.Contains(x.TemplateID))
-                    .Select(x => new TemplateFolder()
-                                 {
-                                     Id = x.ID.ToGuid(),
-                                     Path = x.Paths.GetPath(ItemPathType.Name), 
-                                     Name = x.DisplayName
-                                 })
+                    .Select(x => fldrMapper.Map(x))
                     .ToList();
                 ;
 
@@ -140,17 +128,7 @@
                 var templates = root
                     .Children
                     .Where(x => !this.FolderTemplates.Contains(x.TemplateID))
-                    .Select(x => new TemplateMetaItem()
-                                 {
-                                     Id = x.ID.ToGuid(),
-                                     Path = x.Paths.GetPath(ItemPathType.Name),
-                                     Name = x.DisplayName,
-                                     Icon = x.Fields[FieldIDs.Icon].GetValue(true, true),
-                                     Description = x.Fields[Constants.Fields.LongDescription].Value,
-                                     Fields = this.GetTemplateFields(x),
-                                     BaseTemplates = this.FillTemplateBases(x),
-                                     InsertOptions = this.FillTemplateInsertOptions(x)
-                                 })
+                    .Select(x => metaItemMapper.Map(x))
                     .ToList();
 
                 foreach (var r in templates)
@@ -162,84 +140,5 @@
             return result;
         }
 
-        private TemplateMetaItem FillRenderingDataSourceTemplate(Item item)
-        {
-            var templateItem = this.Database.GetItem(item.Fields[Constants.Fields.DataSourceTemplate].Value);
-            if (templateItem == null)
-            {
-                return null;
-            }
-
-            return new TemplateMetaItem()
-                   {
-                       Id = templateItem.ID.ToGuid(),
-                       Path = templateItem.Paths.GetPath(ItemPathType.Name),
-                       Name = templateItem.DisplayName
-                   };
-        }
-
-        private IList<TemplateMetaItem> FillTemplateBases(Item template)
-        {
-            var noiseTemplates = new[] { Constants.Templates.StandardTemplate };
-            var baseTemplatesField = (MultilistField)template.Fields[Constants.Fields.BaseTemplate];
-            return baseTemplatesField
-                .GetItems()
-                .Where(x => !noiseTemplates.Contains(x.ID))
-                .Select(x => new TemplateMetaItem()
-                             {
-                                Id = x.ID.ToGuid(),
-                                Path = x.Paths.GetPath(ItemPathType.Name),
-                                Name = x.DisplayName
-                             })
-                .ToList();
-        }
-
-        private IList<TemplateMetaItem> FillTemplateInsertOptions(Item template)
-        {
-            var standardValuesItem = this.Database.GetItem(template.Fields[FieldIDs.StandardValues].Value);
-            if (standardValuesItem == null)
-            {
-                return Enumerable.Empty<TemplateMetaItem>().ToList();
-            }
-
-            var mastersField = (MultilistField)standardValuesItem.Fields[Constants.Fields.Masters];
-            return mastersField
-                .GetItems()
-                .Select(x => new TemplateMetaItem()
-                             {
-                                 Id = x.ID.ToGuid(),
-                                 Path = x.Paths.GetPath(ItemPathType.Name),
-                                 Name = x.DisplayName
-                             })
-                .ToList();
-        }
-
-        private IList<FieldItem> GetTemplateFields(Item template)
-        {
-            var fields = template
-                .Axes
-                .GetDescendants()
-                .Where(x => x.TemplateID == Constants.Templates.TemplateField)
-                .Select(x => new FieldItem()
-                             {
-                                 Id = x.ID.ToGuid(),
-                                 Path = x.Paths.GetPath(ItemPathType.Name),
-                                 Name = x.DisplayName,
-                                 Section = new SectionItem()
-                                           {
-                                             Id  = x.Parent.ID.ToGuid(),
-                                             Name = x.Parent.DisplayName,
-                                             Path = x.Parent.Paths.GetPath(ItemPathType.Name)
-                                           },
-                                 FieldType = x.Fields[Constants.Fields.Type].Value,
-                                 Source = x.Fields[Constants.Fields.Source].Value,
-                                 LongDescription = x.Fields[Constants.Fields.LongDescription].Value,
-                                 ShortDescription = x.Fields[Constants.Fields.ShortDescription].Value,
-                                 IsRequired = x.Fields[Constants.Fields.ValidatorBar].Value.Contains(Constants.Validators.IsRequired.ToString())
-                             })
-                .ToList();
-
-            return fields;
-        }
     }
 }

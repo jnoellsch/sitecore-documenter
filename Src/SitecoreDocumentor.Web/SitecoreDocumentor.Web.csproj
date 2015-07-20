@@ -57,6 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
+    <Compile Include="Mapping\IObjectMapper.cs" />
+    <Compile Include="Mapping\RenderingFolderMapper.cs" />
+    <Compile Include="Mapping\RenderingMetaItemMapper.cs" />
+    <Compile Include="Mapping\TemplateFolderMapper.cs" />
+    <Compile Include="Mapping\TemplateMetaItemMapper.cs" />
     <Compile Include="Models\FieldItem.cs" />
     <Compile Include="Models\ModelBase.cs" />
     <Compile Include="Models\RenderingFolder.cs" />
