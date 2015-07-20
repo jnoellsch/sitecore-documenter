@@ -5,6 +5,8 @@ Produces detailed information of custom Sitecore renderings and templates for in
 * Name
 * Path
 
+---
+
 ## Renderings
 
 * Icon
@@ -14,9 +16,11 @@ Produces detailed information of custom Sitecore renderings and templates for in
 * Data source (location + template)
 * Image
 
-    NOTE: Description field populated using "Long Description" field. Image is populated by "Thumbnail Image" field. Since larger images may be desired, a convention 
-    of an appended "_full" suffix is used. For example, if the thumbnail points to /media library/image1, a secondary 
-    image of /media library/image1_full could be uploaded and would take precedence.
+---
+
+> NOTE: Description field populated using "Long Description" field. Image is populated by "Thumbnail Image" field. Since larger images may be desired, a convention 
+> of an appended "_full" suffix is used. For example, if the thumbnail points to /media library/image1, a secondary 
+> image of /media library/image1_full could be uploaded and would take precedence.
 
 ## Templates
 
@@ -33,4 +37,6 @@ Produces detailed information of custom Sitecore renderings and templates for in
     * Source
     * Is Required 
 
-    NOTE: Description fields populated using "Long Description" field.
+---
+
+> NOTE: Description fields populated using "Long Description" field.
