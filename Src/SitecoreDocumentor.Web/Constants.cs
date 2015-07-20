@@ -16,7 +16,6 @@
 
         public class Fields
         {
-            public static readonly string Description = "Description";
             public static readonly string DataSourceLocation = "Datasource Location";
             public static readonly string DataSourceTemplate = "Datasource Template";
             public static readonly string Type = "Type";

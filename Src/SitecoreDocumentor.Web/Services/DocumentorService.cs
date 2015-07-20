@@ -88,7 +88,7 @@
                                      Name = x.DisplayName,
                                      Icon = x.Fields[FieldIDs.Icon].GetValue(true, true),
                                      ThumbnailImage = MediaManager.GetMediaUrl(x.Fields[FieldIDs.Thumbnail].Item),
-                                     Description = x.Fields[Constants.Fields.Description].Value,
+                                     Description = x.Fields[Constants.Fields.LongDescription].Value,
                                      DataSourceLocation = x.Fields[Constants.Fields.DataSourceLocation].Value,
                                      DataSourceTemplate = x.Fields[Constants.Fields.DataSourceTemplate].Value
                                  })
