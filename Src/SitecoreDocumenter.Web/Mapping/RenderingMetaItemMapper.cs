@@ -32,9 +32,9 @@
                        ThumbnailImage = source.Fields[FieldIDs.Thumbnail].GetMediaUrlSafe(),
                        FullImage = this.MakeFullImage(source),
                        Description = source.Fields[Constants.Fields.LongDescription].Value,
-                       DataSourceLocation =
-                           source.Fields[Constants.Fields.DataSourceLocation].Value,
-                       DataSourceTemplate = this.FillRenderingDataSourceTemplate(source)
+                       DataSourceLocation = source.Fields[Constants.Fields.DataSourceLocation].Value,
+                       DataSourceTemplate = this.FillRenderingDataSourceTemplate(source),
+                       Type = source.TemplateName.Replace("Rendering", string.Empty).Replace("rendering", string.Empty)
                    };
         }
 

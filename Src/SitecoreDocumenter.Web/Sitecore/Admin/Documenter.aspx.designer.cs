@@ -8,10 +8,8 @@
 //------------------------------------------------------------------------------
 
 namespace SitecoreDocumenter.Web {
-    using System.Web.UI.HtmlControls;
-    using System.Web.UI.WebControls;
-    using SitecoreDocumenter.Web.UserControls;
-
+    
+    
     public partial class Documenter {
         
         /// <summary>
@@ -21,7 +19,7 @@ namespace SitecoreDocumenter.Web {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
         /// rptErrMsgs control.
@@ -30,7 +28,7 @@ namespace SitecoreDocumenter.Web {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected Repeater rptErrMsgs;
+        protected global::System.Web.UI.WebControls.Repeater rptErrMsgs;
         
         /// <summary>
         /// txtRenderingRoot control.
@@ -39,7 +37,7 @@ namespace SitecoreDocumenter.Web {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected TextBox txtRenderingRoot;
+        protected global::System.Web.UI.WebControls.TextBox txtRenderingRoot;
         
         /// <summary>
         /// txtTemplateRoot control.
@@ -48,7 +46,7 @@ namespace SitecoreDocumenter.Web {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected TextBox txtTemplateRoot;
+        protected global::System.Web.UI.WebControls.TextBox txtTemplateRoot;
         
         /// <summary>
         /// btnSubmit control.
@@ -57,7 +55,7 @@ namespace SitecoreDocumenter.Web {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected Button btnSubmit;
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
         
         /// <summary>
         /// ucRenderings control.
@@ -66,7 +64,7 @@ namespace SitecoreDocumenter.Web {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected RenderingsList ucRenderings;
+        protected global::SitecoreDocumenter.Web.UserControls.RenderingsList ucRenderings;
         
         /// <summary>
         /// ucTemplates control.
@@ -75,6 +73,6 @@ namespace SitecoreDocumenter.Web {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected TemplatesList ucTemplates;
+        protected global::SitecoreDocumenter.Web.UserControls.TemplatesList ucTemplates;
     }
 }

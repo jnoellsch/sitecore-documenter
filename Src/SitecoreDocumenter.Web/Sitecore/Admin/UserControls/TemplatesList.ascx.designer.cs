@@ -8,8 +8,8 @@
 //------------------------------------------------------------------------------
 
 namespace SitecoreDocumenter.Web.UserControls {
-    using System.Web.UI.WebControls;
-
+    
+    
     public partial class TemplatesList {
         
         /// <summary>
@@ -19,7 +19,7 @@ namespace SitecoreDocumenter.Web.UserControls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected Repeater rptJumplinks;
+        protected global::System.Web.UI.WebControls.Repeater rptJumplinks;
         
         /// <summary>
         /// rptTemplateFolders control.
@@ -28,6 +28,6 @@ namespace SitecoreDocumenter.Web.UserControls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected Repeater rptTemplateFolders;
+        protected global::System.Web.UI.WebControls.Repeater rptTemplateFolders;
     }
 }

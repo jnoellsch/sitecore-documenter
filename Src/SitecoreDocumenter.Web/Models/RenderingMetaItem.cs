@@ -13,6 +13,7 @@ namespace SitecoreDocumenter.Web.Models
         public string FullImage { get; set; }
         public TemplateMetaItem DataSourceTemplate { get; set; }
         public string DataSourceLocation { get; set; }
+        public string Type { get; set; }
 
         /// <summary>
         /// Gets the full image (ideal) or the thumbnail image (backup).

@@ -11,8 +11,8 @@
     {
         private readonly ID[] _fldrTemplates =
         {
-            Constants.Templates.RenderingFolder, Constants.Templates.TemplateFolder,
-            Constants.Templates.SublayoutFolder, Constants.Templates.Folder
+            Constants.Templates.Folders.RenderingFolder, Constants.Templates.Folders.TemplateFolder,
+            Constants.Templates.Folders.SublayoutFolder, Constants.Templates.Folders.Folder
         };
 
         private Database Database
