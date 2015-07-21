@@ -16,6 +16,7 @@ Once installed, browse to /sitecore/admin/documenter.aspx to process the documen
 * Name
 * Path
 * Description
+* Type
 * Data source (location + template)
 * Image
 
