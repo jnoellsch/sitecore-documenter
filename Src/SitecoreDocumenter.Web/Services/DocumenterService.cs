@@ -1,6 +1,7 @@
 ﻿namespace SitecoreDocumenter.Web.Services
 {
     using System.Linq;
+    using System.Web;
     using Sitecore.Configuration;
     using Sitecore.Data;
     using Sitecore.Data.Items;
@@ -50,7 +51,7 @@
 
         private RenderingFolder GetRenderingsDeep(string rootPath)
         {
-            var metaItemMapper = new RenderingMetaItemMapper();
+            var metaItemMapper = new RenderingMetaItemMapper(new HttpRequestWrapper(HttpContext.Current.Request));
             var fldrMapper = new RenderingFolderMapper();
 
             // get root item - go deeper if are sub items
@@ -91,7 +92,7 @@
 
         private TemplateFolder GetTemplatesDeep(string rootPath)
         {
-            var metaItemMapper = new TemplateMetaItemMapper();
+            var metaItemMapper = new TemplateMetaItemMapper(new HttpRequestWrapper(HttpContext.Current.Request));
             var fldrMapper = new TemplateFolderMapper();
 
             // get root item - go deeper if are sub items

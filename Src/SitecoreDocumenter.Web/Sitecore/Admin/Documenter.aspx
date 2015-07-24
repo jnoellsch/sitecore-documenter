@@ -13,10 +13,18 @@
     <script src="//ajax.aspnetcdn.com/ajax/bootstrap/3.3.4/bootstrap.min.js"></script>
 
     <style type="text/css">
-        h3 img {
-            margin-top: -3px;
-            width: 16px;
+        @media print {
+            .no-print { display: none; }
         }
+
+         h3 img {
+             margin-top: -3px;
+             width: 16px;
+         }
+
+         .form-inline .form-group input {
+             width: 350px;
+         }
 
         .row {
             margin-top: 15px;
@@ -31,9 +39,9 @@
             width: 30px;
         }
 
-            .tblcol-icon img {
-                width: 16px;
-            }
+        .tblcol-icon img {
+            width: 16px;
+        }
 
         .tblcol-name {
             width: 225px;
@@ -60,20 +68,20 @@
             width: 400px;
         }
 
-        .tblcol-image .img {
+        .tblcol-image img {
             max-width: 400px;
             height: auto;
         }
 
         .tblcol-datasource {
-            width: 250px;
+            width: 250px; 
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server" class="container-fluid">
         <!-- Form -->
-        <div class="row">
+        <div class="row no-print">
             <div class="col-md-12">
                 <asp:Repeater runat="server" id="rptErrMsgs" ItemType="System.String">
                     <HeaderTemplate><div class="alert alert-warning"></HeaderTemplate>
@@ -97,7 +105,7 @@
 
         <div class="row">
             <div class="col-md-12">
-                <ul class="nav nav-tabs" data-tabs="tabs" id="tabs" role="tablist">
+                <ul class="nav nav-tabs no-print" data-tabs="tabs" id="tabs" role="tablist">
                     <li class="active"><a href="#renderings" data-toggle="tab" role="tab">Renderings</a></li>
                     <li><a href="#templates" data-toggle="tab" role="tab">Templates</a></li>
                 </ul>

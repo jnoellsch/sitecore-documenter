@@ -1,10 +1,10 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="RenderingsList.ascx.cs" Inherits="SitecoreDocumenter.Web.UserControls.RenderingsList" %>
-
+ 
 <div class="page-header">
     <h1>Renderings</h1>
 </div>
 <div class="row">
-    <div class="col-md-2">
+    <div class="col-md-2 no-print">
         <asp:Repeater runat="server" ID="rptJumplinks" ItemType="SitecoreDocumenter.Web.Models.RenderingFolder">
             <HeaderTemplate>
                 <div class="list-group">
@@ -38,7 +38,7 @@
                     <ItemTemplate>
                         <tr>
                             <td class="tblcol-icon">
-                                <img src="<%# "/sitecore/shell/~/icon/" + Item.Icon %>" />
+                                <img src="<%# Item.Icon %>" />
                             </td>
                             <td><%# Item.Name %></td>
                             <td><%# Item.Description %></td>
@@ -47,7 +47,7 @@
                                 <span runat="server" Visible="<%# !string.IsNullOrEmpty(Item.DataSourceLocation) %>"><%# Item.DataSourceLocation %><br /></span>
                             </td>
                             <td class="tblcol-image">
-                                <asp:Image runat="server" ImageUrl="<%# Item.Image %>" Visible="<%# !string.IsNullOrEmpty(Item.Image) %>" />
+                                <img runat="server" src="<%# Item.Image %>" />
                             </td>
                         </tr>
                     </ItemTemplate>

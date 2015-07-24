@@ -1,10 +1,10 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="TemplatesList.ascx.cs" Inherits="SitecoreDocumenter.Web.UserControls.TemplatesList" %>
-
+ 
 <div class="page-header">
     <h1>Templates</h1>
 </div>
 <div class="row">
-    <div class="col-md-2">
+    <div class="col-md-2 no-print">
         <asp:Repeater runat="server" ID="rptJumplinks" ItemType="SitecoreDocumenter.Web.Models.TemplateFolder">
             <HeaderTemplate>
                 <div class="list-group">
@@ -24,7 +24,7 @@
                 <asp:Repeater ID="rptTemplates" runat="server" ItemType="SitecoreDocumenter.Web.Models.TemplateMetaItem">
                     <ItemTemplate>
                         <h3 id="<%# Item.Id %>">
-                            <img src="<%# "/sitecore/shell/~/icon/" + Item.Icon %>" />
+                            <img src="<%# Item.Icon %>" />
                             <%# Item.Name %>
                         </h3>
                         <p><%# Item.Description %></p>

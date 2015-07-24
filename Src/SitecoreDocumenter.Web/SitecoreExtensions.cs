@@ -1,6 +1,7 @@
 ﻿namespace SitecoreDocumenter.Web
 {
     using Sitecore.Data.Fields;
+    using Sitecore.Data.Items;
     using Sitecore.Resources.Media;
 
     public static class SitecoreExtensions
@@ -21,7 +22,8 @@
             }
 
             // generate image url
-            string url = MediaManager.GetMediaUrl(imageField.MediaItem).CleanAdminPath();
+            var o = new MediaUrlOptions() { AlwaysIncludeServerUrl = true };
+            string url = imageField.MediaItem.GetMediaUrlFull().CleanAdminPath();
             return url;
         }
 
@@ -38,6 +40,12 @@
         public static string CleanAdminPath(this string path)
         {
             return !string.IsNullOrEmpty(path) ? path.Replace("/sitecore/admin", string.Empty) : path;
+        }
+
+        public static string GetMediaUrlFull(this Item mediaItem)
+        {
+            var o = new MediaUrlOptions() { AlwaysIncludeServerUrl = true };
+            return MediaManager.GetMediaUrl(mediaItem, o).CleanAdminPath();
         }
     }
 }

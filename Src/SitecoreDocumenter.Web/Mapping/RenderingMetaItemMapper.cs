@@ -1,5 +1,7 @@
 ﻿namespace SitecoreDocumenter.Web.Mapping
 {
+    using System;
+    using System.Web;
     using Sitecore;
     using Sitecore.Configuration;
     using Sitecore.Data;
@@ -11,6 +13,14 @@
 
     public class RenderingMetaItemMapper : IObjectMapper<Item, RenderingMetaItem>
     {
+        private readonly HttpRequestBase _httpRequest;
+
+        public RenderingMetaItemMapper(HttpRequestBase httpRequest)
+        {
+            if (httpRequest == null) throw new ArgumentNullException("httpRequest");
+            this._httpRequest = httpRequest;
+        }
+
         private Database Database
         {
             get
@@ -28,7 +38,11 @@
                        Id = source.ID.ToGuid(),
                        Path = source.Paths.GetPath(ItemPathType.Name),
                        Name = source.DisplayName,
-                       Icon = source.Fields[FieldIDs.Icon].GetValueWithFallback("Software/16x16/element.png"),
+                       Icon = string.Format(
+                               "{0}{1}{2}",
+                               this._httpRequest.Url.GetComponents(UriComponents.SchemeAndServer, UriFormat.UriEscaped),
+                               "/sitecore/shell/~/icon/",
+                               source.Fields[FieldIDs.Icon].GetValueWithFallback("Software/16x16/element.png")),
                        ThumbnailImage = source.Fields[FieldIDs.Thumbnail].GetMediaUrlSafe(),
                        FullImage = this.MakeFullImage(source),
                        Description = source.Fields[Constants.Fields.LongDescription].Value,
@@ -53,14 +67,14 @@
 
             // using convention, attempt to grab full image
             string fullImgPath = string.Concat(thumbImgField.MediaItem.Paths.GetPath(ItemPathType.Name), "_full");
-            var fullImgItem = (MediaItem)this.Database.GetItem(fullImgPath);
+            var fullImgItem = this.Database.GetItem(fullImgPath);
             if (fullImgItem == null)
             {
                 return string.Empty;
             }
 
             // generate path to image
-            return MediaManager.GetMediaUrl(fullImgItem).CleanAdminPath();
+            return fullImgItem.GetMediaUrlFull().CleanAdminPath();
         }
 
         private TemplateMetaItem FillRenderingDataSourceTemplate(Item item)

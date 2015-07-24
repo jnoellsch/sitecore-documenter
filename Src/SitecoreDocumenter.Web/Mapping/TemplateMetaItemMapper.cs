@@ -1,7 +1,9 @@
 ﻿namespace SitecoreDocumenter.Web.Mapping
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Web;
     using Sitecore;
     using Sitecore.Configuration;
     using Sitecore.Data;
@@ -12,6 +14,14 @@
 
     public class TemplateMetaItemMapper : IObjectMapper<Item, TemplateMetaItem>
     {
+        private readonly HttpRequestBase _httpRequest;
+
+        public TemplateMetaItemMapper(HttpRequestBase httpRequest)
+        {
+            if (httpRequest == null) throw new ArgumentNullException("httpRequest");
+            this._httpRequest = httpRequest;
+        }
+
         private Database Database
         {
             get
@@ -29,7 +39,11 @@
                        Id = source.ID.ToGuid(),
                        Path = source.Paths.GetPath(ItemPathType.Name),
                        Name = source.DisplayName,
-                       Icon = source.Fields[FieldIDs.Icon].GetValueWithFallback("Software/16x16/element.png"),
+                       Icon = string.Format(
+                               "{0}{1}{2}",
+                               this._httpRequest.Url.GetComponents(UriComponents.SchemeAndServer, UriFormat.UriEscaped),
+                               "/sitecore/shell/~/icon/",
+                               source.Fields[FieldIDs.Icon].GetValueWithFallback("Software/16x16/element.png")),
                        Description = source.Fields[Constants.Fields.LongDescription].Value,
                        Fields = this.GetTemplateFields(source),
                        BaseTemplates = this.FillTemplateBases(source),
