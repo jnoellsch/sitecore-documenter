@@ -47,7 +47,7 @@
                                 <span runat="server" Visible="<%# !string.IsNullOrEmpty(Item.DataSourceLocation) %>"><%# Item.DataSourceLocation %><br /></span>
                             </td>
                             <td class="tblcol-image">
-                                <img runat="server" src="<%# Item.Image %>" />
+                                <asp:Image runat="server" ImageUrl='<%# Item.Image + "?w=" + this.ImageWidths %>' Visible="<%# !string.IsNullOrEmpty(Item.Image) %>" />
                             </td>
                         </tr>
                     </ItemTemplate>

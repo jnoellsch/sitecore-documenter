@@ -39,6 +39,19 @@
             }
         }
 
+        public string ImageWidths
+        {
+            get
+            {
+                return this.txtImageWidths.Text;
+            }
+
+            set
+            {
+                this.txtImageWidths.Text = value;
+            }
+        }
+
         public TemplateFolder Templates
         {
             get
@@ -63,6 +76,7 @@
             set
             {
                 this.ViewState["Renderings"] = value;
+                this.ucRenderings.ImageWidths = this.ImageWidths;
                 this.ucRenderings.DataSource = value.Folders.Any() ? value.Folders : new List<RenderingFolder>() { value };
             }
         }

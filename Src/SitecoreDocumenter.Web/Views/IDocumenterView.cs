@@ -9,6 +9,7 @@
     {
         string TemplateRootPath { get; set; }
         string RenderingRootPath { get; set; }
+        string ImageWidths { get; set; }
         TemplateFolder Templates { get; set; }
         RenderingFolder Renderings { get; set; }
         IEnumerable<string> ErrorMessages { get; set; }

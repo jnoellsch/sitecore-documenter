@@ -22,7 +22,7 @@
              width: 16px;
          }
 
-         .form-inline .form-group input {
+         .form-inline .form-group input.paths {
              width: 350px;
          }
 
@@ -68,11 +68,6 @@
             width: 400px;
         }
 
-        .tblcol-image img {
-            max-width: 400px;
-            height: auto;
-        }
-
         .tblcol-datasource {
             width: 250px; 
         }
@@ -91,12 +86,16 @@
                 
                 <div class="form form-inline">
                     <div class="form-group">
-                        <label class="control-label">Rendering Root</label>
-                        <asp:TextBox runat="server" ID="txtRenderingRoot" CssClass="form-control" Placeholder="Rendering path" Text="/sitecore/layout/Renderings/Sample" />
+                        <label class="control-label">Rendering root</label>
+                        <asp:TextBox runat="server" ID="txtRenderingRoot" CssClass="form-control paths" Text="/sitecore/layout/Renderings/Sample" />
                     </div>
                     <div class="form-group">
-                        <label class="control-label">Template Root</label>
-                        <asp:TextBox runat="server" ID="txtTemplateRoot" CssClass="form-control" Placeholder="Template path" Text="/sitecore/templates/Sample" />
+                        <label class="control-label">Template root</label>
+                        <asp:TextBox runat="server" ID="txtTemplateRoot" CssClass="form-control paths" Text="/sitecore/templates/Sample" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Image widths</label>
+                        <asp:TextBox runat="server" ID="txtImageWidths" CssClass="form-control" Text="400" />
                     </div>
                     <asp:Button runat="server" ID="btnSubmit" CssClass="btn btn-primary" Text="Run" />
                 </div>

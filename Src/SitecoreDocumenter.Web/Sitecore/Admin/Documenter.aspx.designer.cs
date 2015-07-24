@@ -49,6 +49,15 @@ namespace SitecoreDocumenter.Web {
         protected global::System.Web.UI.WebControls.TextBox txtTemplateRoot;
         
         /// <summary>
+        /// txtImageWidths control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtImageWidths;
+        
+        /// <summary>
         /// btnSubmit control.
         /// </summary>
         /// <remarks>

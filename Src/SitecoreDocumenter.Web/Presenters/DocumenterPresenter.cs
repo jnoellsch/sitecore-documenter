@@ -52,6 +52,16 @@
                 msgs.Add("Template start item could not be found. Is the path or ID correct?");
             }
 
+            int num;
+            if (!int.TryParse(this._view.ImageWidths, out num))
+            {
+                msgs.Add("Image widths is not a valid number");
+            }
+            else if (num <= 0)
+            {
+                msgs.Add("Image widths must be greater than 0.");
+            }
+
             return msgs;
         }
     }

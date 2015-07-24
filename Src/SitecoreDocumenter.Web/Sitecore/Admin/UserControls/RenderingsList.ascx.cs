@@ -22,6 +22,8 @@
             }
         }
 
+        public string ImageWidths { get; set; }
+
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
