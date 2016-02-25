@@ -1,6 +1,6 @@
-﻿namespace SitecoreDocumenter.Web
+﻿namespace Sitecore.SharedSource.Documenter
 {
-    using Sitecore.Data;
+    using global::Sitecore.Data;
 
     public class Constants
     {

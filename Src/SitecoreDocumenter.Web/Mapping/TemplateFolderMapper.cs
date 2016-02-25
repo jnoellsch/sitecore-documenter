@@ -1,7 +1,7 @@
-﻿namespace SitecoreDocumenter.Web.Mapping
+﻿namespace Sitecore.SharedSource.Documenter.Mapping
 {
-    using Sitecore.Data.Items;
-    using SitecoreDocumenter.Web.Models;
+    using global::Sitecore.Data.Items;
+    using global::Sitecore.SharedSource.Documenter.Models;
 
     public class TemplateFolderMapper : IObjectMapper<Item, TemplateFolder>
     {

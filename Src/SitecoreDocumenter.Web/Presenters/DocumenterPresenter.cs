@@ -1,10 +1,10 @@
-﻿namespace SitecoreDocumenter.Web.Presenters
+﻿namespace Sitecore.SharedSource.Documenter.Presenters
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using SitecoreDocumenter.Web.Services;
-    using SitecoreDocumenter.Web.Views;
+    using global::Sitecore.SharedSource.Documenter.Services;
+    using global::Sitecore.SharedSource.Documenter.Views;
 
     public class DocumenterPresenter
     {

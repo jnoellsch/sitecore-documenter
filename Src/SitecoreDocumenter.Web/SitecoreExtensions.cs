@@ -1,8 +1,8 @@
-﻿namespace SitecoreDocumenter.Web
+﻿namespace Sitecore.SharedSource.Documenter
 {
-    using Sitecore.Data.Fields;
-    using Sitecore.Data.Items;
-    using Sitecore.Resources.Media;
+    using global::Sitecore.Data.Fields;
+    using global::Sitecore.Data.Items;
+    using global::Sitecore.Resources.Media;
 
     public static class SitecoreExtensions
     {

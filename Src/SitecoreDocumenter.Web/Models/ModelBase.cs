@@ -1,4 +1,4 @@
-﻿namespace SitecoreDocumenter.Web.Models
+﻿namespace Sitecore.SharedSource.Documenter.Models
 {
     using System;
     using System.Diagnostics.CodeAnalysis;

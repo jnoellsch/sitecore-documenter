@@ -1,16 +1,15 @@
-﻿namespace SitecoreDocumenter.Web.Mapping
+﻿namespace Sitecore.SharedSource.Documenter.Mapping
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Web;
-    using Sitecore;
-    using Sitecore.Configuration;
-    using Sitecore.Data;
-    using Sitecore.Data.Fields;
-    using Sitecore.Data.Items;
-    using SitecoreDocumenter.Web.Models;
-    using Constants = SitecoreDocumenter.Web.Constants;
+    using global::Sitecore.Configuration;
+    using global::Sitecore.Data;
+    using global::Sitecore.Data.Fields;
+    using global::Sitecore.Data.Items;
+    using global::Sitecore.SharedSource.Documenter.Models;
+    using Constants = global::Sitecore.SharedSource.Documenter.Constants;
 
     public class TemplateMetaItemMapper : IObjectMapper<Item, TemplateMetaItem>
     {

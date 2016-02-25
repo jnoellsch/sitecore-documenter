@@ -1,4 +1,4 @@
-﻿namespace SitecoreDocumenter.Web.Mapping
+﻿namespace Sitecore.SharedSource.Documenter.Mapping
 {
     /// <summary>
     /// Maps one object to another.

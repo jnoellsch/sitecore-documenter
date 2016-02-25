@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Documenter.aspx.cs" Inherits="SitecoreDocumenter.Web.Documenter" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Documenter.aspx.cs" Inherits="Sitecore.SharedSource.DocumenterPage" %>
 
 <%@ Register Src="~/Sitecore/Admin/UserControls/TemplatesList.ascx" TagPrefix="uc" TagName="TemplatesList" %>
 <%@ Register Src="~/Sitecore/Admin/UserControls/RenderingsList.ascx" TagPrefix="uc" TagName="RenderingsList" %>

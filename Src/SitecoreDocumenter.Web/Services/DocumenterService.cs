@@ -1,12 +1,12 @@
-﻿namespace SitecoreDocumenter.Web.Services
+﻿namespace Sitecore.SharedSource.Documenter.Services
 {
     using System.Linq;
     using System.Web;
-    using Sitecore.Configuration;
-    using Sitecore.Data;
-    using Sitecore.Data.Items;
-    using SitecoreDocumenter.Web.Mapping;
-    using SitecoreDocumenter.Web.Models;
+    using global::Sitecore.Configuration;
+    using global::Sitecore.Data;
+    using global::Sitecore.Data.Items;
+    using global::Sitecore.SharedSource.Documenter.Mapping;
+    using global::Sitecore.SharedSource.Documenter.Models;
 
     public class DocumenterService
     {

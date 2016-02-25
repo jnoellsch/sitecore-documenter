@@ -1,15 +1,15 @@
-﻿namespace SitecoreDocumenter.Web
+﻿namespace Sitecore.SharedSource
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using Sitecore.sitecore.admin;
-    using SitecoreDocumenter.Web.Models;
-    using SitecoreDocumenter.Web.Presenters;
-    using SitecoreDocumenter.Web.Services;
-    using SitecoreDocumenter.Web.Views;
+    using global::Sitecore.sitecore.admin;
+    using global::Sitecore.SharedSource.Documenter.Models;
+    using global::Sitecore.SharedSource.Documenter.Presenters;
+    using global::Sitecore.SharedSource.Documenter.Services;
+    using global::Sitecore.SharedSource.Documenter.Views;
 
-    public partial class Documenter : AdminPage, IDocumenterView
+    public partial class DocumenterPage : AdminPage, IDocumenterView
     {
         private DocumenterPresenter _presenter;
 

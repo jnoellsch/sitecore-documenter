@@ -1,8 +1,8 @@
-﻿namespace SitecoreDocumenter.Web.Views
+﻿namespace Sitecore.SharedSource.Documenter.Views
 {
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
-    using SitecoreDocumenter.Web.Models;
+    using global::Sitecore.SharedSource.Documenter.Models;
 
     [SuppressMessage("StyleCop.CSharp.LayoutRules", "SA1516:ElementsMustBeSeparatedByBlankLine", Justification = "Simple properties are cleaner without separated lines.")]
     public interface IDocumenterView
