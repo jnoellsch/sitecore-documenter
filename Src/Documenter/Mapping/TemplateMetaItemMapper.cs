@@ -54,6 +54,11 @@
         {
             var noiseTemplates = new[] { Constants.Templates.StandardTemplate };
             var baseTemplatesField = (MultilistField)template.Fields[Constants.Fields.BaseTemplate];
+            if (baseTemplatesField == null)
+            {
+                return Enumerable.Empty<TemplateMetaItem>().ToList();
+            }
+
             return baseTemplatesField
                 .GetItems()
                 .Where(x => !noiseTemplates.Contains(x.ID))
@@ -75,6 +80,11 @@
             }
 
             var mastersField = (MultilistField)standardValuesItem.Fields[Constants.Fields.Masters];
+            if (mastersField == null)
+            {
+                return Enumerable.Empty<TemplateMetaItem>().ToList();
+            }
+
             return mastersField
                 .GetItems()
                 .Select(x => new TemplateMetaItem()
