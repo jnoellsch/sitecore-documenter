@@ -4,6 +4,14 @@
 
     public class Constants
     {
+        public class Settings
+        {
+            public static readonly string TemplateRootPath = string.Format("{0}TemplateRootPath", Prefix);
+            public static readonly string RenderingRootPath = string.Format("{0}RenderingRootPath", Prefix);
+            public static readonly string ImageWidths = string.Format("{0}ImageWidths", Prefix);
+            private const string Prefix = "Documenter.";
+        }
+
         public class Templates
         {
             public static readonly ID TemplateField = new ID("{455A3E98-A627-4B40-8035-E683A0331AC7}");

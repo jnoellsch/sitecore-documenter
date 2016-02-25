@@ -5,6 +5,7 @@
     using System.Linq;
     using global::Sitecore.SharedSource.Documenter.Services;
     using global::Sitecore.SharedSource.Documenter.Views;
+    using Constants = Sitecore.SharedSource.Documenter.Constants;
 
     public class DocumenterPresenter
     {
@@ -19,6 +20,14 @@
 
             this._view = view;
             this._service = service;
+        }
+
+        public void Initialize()
+        {
+            // assign defaults
+            this._view.RenderingRootPath = Configuration.Settings.GetSetting(Constants.Settings.RenderingRootPath);
+            this._view.TemplateRootPath = Configuration.Settings.GetSetting(Constants.Settings.TemplateRootPath);
+            this._view.ImageWidths = Configuration.Settings.GetSetting(Constants.Settings.ImageWidths);
         }
 
         public void LoadData()

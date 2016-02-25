@@ -39,8 +39,9 @@
     </xitems>
     <xfiles>
       <Entries>
-        <x-item>/bin/SitecoreDocumenter.Web.dll</x-item>
-        <x-item>/bin/SitecoreDocumenter.Web.pdb</x-item>
+        <x-item>/bin/Sitecore.SharedSource.Documenter.dll</x-item>
+        <x-item>/bin/Sitecore.SharedSource.Documenter.pdb</x-item>
+        <x-item>/App_Config/Include/Sitecore.SharedSource.Documenter.config</x-item>
         <x-item>/sitecore/admin/UserControls/RenderingsList.ascx</x-item>
         <x-item>/sitecore/admin/UserControls/TemplatesList.ascx</x-item>
         <x-item>/sitecore/admin/Documenter.aspx</x-item>

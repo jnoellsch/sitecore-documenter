@@ -110,8 +110,15 @@
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
+            
+            // initialize
             this._presenter = new DocumenterPresenter(this, new DocumenterService());
+            if (!this.IsPostBack)
+            {
+                this._presenter.Initialize();
+            }
 
+            // wire events
             this.btnSubmit.Click += (sender, args) => { this._presenter.LoadData(); };
         }
     }

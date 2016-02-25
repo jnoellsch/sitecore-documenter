@@ -109,6 +109,7 @@
     <Content Include="Sitecore\Admin\UserControls\RenderingsList.ascx" />
     <Content Include="Sitecore\Admin\UserControls\TemplatesList.ascx" />
     <Content Include="app.config" />
+    <Content Include="App_Config\Include\Sitecore.SharedSource.Documenter.config" />
     <None Include="Properties\PublishProfiles\Sitecore 7.pubxml" />
     <None Include="Properties\PublishProfiles\Sitecore 8.pubxml" />
   </ItemGroup>
