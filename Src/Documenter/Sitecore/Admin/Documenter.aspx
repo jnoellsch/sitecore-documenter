@@ -95,7 +95,7 @@
                     </div>
                     <div class="form-group">
                         <label class="control-label">Image widths</label>
-                        <asp:TextBox runat="server" ID="txtImageWidths" CssClass="form-control" Text="400" />
+                        <asp:TextBox runat="server" ID="txtImageWidths" CssClass="form-control" Text="300" />
                     </div>
                     <asp:Button runat="server" ID="btnSubmit" CssClass="btn btn-primary" Text="Run" />
                 </div>
