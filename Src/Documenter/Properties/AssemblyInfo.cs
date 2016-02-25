@@ -4,12 +4,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SitecoreDocumenter.Web")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Sitecore.SharedSource.Documenter")]
+[assembly: AssemblyDescription("Produces detailed information of custom Sitecore renderings and templates for inclusion in technical documentation.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SitecoreDocumenter.Web")]
-[assembly: AssemblyCopyright("Copyright © 2015")]
+[assembly: AssemblyProduct("Sitecore Documenter")]
+[assembly: AssemblyCopyright("Copyright © 2015-2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
