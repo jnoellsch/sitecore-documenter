@@ -41,7 +41,7 @@
                        Icon = string.Format(
                                "{0}{1}{2}",
                                this._httpRequest.Url.GetComponents(UriComponents.SchemeAndServer, UriFormat.UriEscaped),
-                               "/sitecore/shell/~/icon/",
+                               "/~/icon/",
                                source.Fields[FieldIDs.Icon].GetValueWithFallback("Software/16x16/element.png")),
                        Description = source.Fields[Constants.Fields.LongDescription].Value,
                        Fields = this.GetTemplateFields(source),

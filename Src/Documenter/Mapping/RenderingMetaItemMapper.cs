@@ -39,7 +39,7 @@
                        Icon = string.Format(
                                "{0}{1}{2}",
                                this._httpRequest.Url.GetComponents(UriComponents.SchemeAndServer, UriFormat.UriEscaped),
-                               "/sitecore/shell/~/icon/",
+                               "/~/icon/",
                                source.Fields[FieldIDs.Icon].GetValueWithFallback("Software/16x16/element.png")),
                        ThumbnailImage = source.Fields[FieldIDs.Thumbnail].GetMediaUrlSafe(),
                        FullImage = this.MakeFullImage(source),
