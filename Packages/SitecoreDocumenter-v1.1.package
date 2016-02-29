@@ -8,7 +8,11 @@
       <License />
       <Comment />
       <Attributes />
-      <Readme>Allows for cut and paste documentation of renderings and templates. Page used to generate output is located @ /sitecore/admin/documenter.aspx.</Readme>
+      <Readme>Allows for cut and paste documentation of renderings and templates. 
+
+- Page used to generate documentation @ /sitecore/admin/documenter.aspx
+- Config used to control defaults @ /App_Config/Include/Sitecore.SharedSource.Documenter.config
+- Launchpad quick link button @ /sitecore/client/Applications/Launchpad/PageSettings/Buttons/Tools/Documenter</Readme>
       <Publisher />
       <PostStep />
       <PackageID />
