@@ -84,7 +84,7 @@
                     <FooterTemplate></div></FooterTemplate>
                 </asp:Repeater>
                 
-                <div class="form form-inline">
+                <div class="form form-inline hide">
                     <div class="form-group">
                         <label class="control-label">Rendering root</label>
                         <asp:TextBox runat="server" ID="txtRenderingRoot" CssClass="form-control paths" Text="/" />
@@ -97,7 +97,6 @@
                         <label class="control-label">Image widths</label>
                         <asp:TextBox runat="server" ID="txtImageWidths" CssClass="form-control" Text="" />
                     </div>
-                    <asp:Button runat="server" ID="btnSubmit" CssClass="btn btn-primary" Text="Run" />
                 </div>
             </div>
         </div>
@@ -107,6 +106,7 @@
                 <ul class="nav nav-tabs no-print" data-tabs="tabs" id="tabs" role="tablist">
                     <li class="active"><a href="#renderings" data-toggle="tab" role="tab">Renderings</a></li>
                     <li><a href="#templates" data-toggle="tab" role="tab">Templates</a></li>
+                    <li class="pull-right"><asp:Button runat="server" ID="btnSubmit" CssClass="btn btn-primary" Text="Refresh" /></li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="renderings">
