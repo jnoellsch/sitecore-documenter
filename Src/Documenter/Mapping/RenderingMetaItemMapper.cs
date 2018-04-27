@@ -31,22 +31,38 @@
         {
             if (source == null) return null;
 
-            return new RenderingMetaItem()
-                   {
-                       Id = source.ID.ToGuid(),
-                       Path = source.Paths.GetPath(ItemPathType.Name),
-                       Name = source.DisplayName,
-                       Icon = string.Format(
+            System.Guid guid = source.ID.ToGuid();
+            string path = source.Paths.GetPath(ItemPathType.Name);
+            string name = source.DisplayName;
+            string icon = string.Format(
                                "{0}{1}{2}",
                                this._httpRequest.Url.GetComponents(UriComponents.SchemeAndServer, UriFormat.UriEscaped),
                                "/~/icon/",
-                               source.Fields[FieldIDs.Icon].GetValueWithFallback("Software/16x16/element.png")),
-                       ThumbnailImage = source.Fields[FieldIDs.Thumbnail].GetMediaUrlSafe(),
-                       FullImage = this.MakeFullImage(source),
-                       Description = source.Fields[Constants.Fields.LongDescription].Value,
-                       DataSourceLocation = source.Fields[Constants.Fields.DataSourceLocation].Value,
-                       DataSourceTemplate = this.FillRenderingDataSourceTemplate(source),
-                       Type = source.TemplateName.Replace("Rendering", string.Empty).Replace("rendering", string.Empty)
+                               source.Fields[FieldIDs.Icon].GetValueWithFallback("Software/16x16/element.png"));
+            string thumbnailImage = source.Fields[FieldIDs.Thumbnail].GetMediaUrlSafe();
+            string fullImage = this.MakeFullImage(source);
+
+            Field descriptionField = source.Fields[Constants.Fields.LongDescription];
+            string description = descriptionField == null ? string.Empty : descriptionField.Value;
+
+            Field dataSourceLocationField = source.Fields[Constants.Fields.DataSourceLocation];
+            string dataSourceLocation = dataSourceLocationField == null ? string.Empty : dataSourceLocationField.Value;
+
+            TemplateMetaItem templateMetaItem = this.FillRenderingDataSourceTemplate(source);
+            string type = source.TemplateName.Replace("Rendering", string.Empty).Replace("rendering", string.Empty);
+
+            return new RenderingMetaItem()
+                   {
+                       Id = guid,
+                       Path = path,
+                       Name = name,
+                       Icon = icon,
+                       ThumbnailImage = thumbnailImage,
+                       FullImage = fullImage,
+                       Description = description,
+                       DataSourceLocation = dataSourceLocation,
+                       DataSourceTemplate = templateMetaItem,
+                       Type = type
                    };
         }
 
@@ -77,6 +93,8 @@
 
         private TemplateMetaItem FillRenderingDataSourceTemplate(Item item)
         {
+            var dataSourceTemplate = item.Fields[Constants.Fields.DataSourceTemplate];
+            if (dataSourceTemplate == null) return null;
             var templateItem = this.Database.GetItem(item.Fields[Constants.Fields.DataSourceTemplate].Value);
             if (templateItem == null)
             {
